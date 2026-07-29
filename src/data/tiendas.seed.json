@@ -1,0 +1,1866 @@
+[
+  {
+    "id_tienda": "T64",
+    "nombre": "DROGAS LA GARANTIA (2)",
+    "zona": "Medellin - Zona 2",
+    "url_ubicacion": "https://maps.app.goo.gl/1sTV47rLf3MjjdR88",
+    "lat": 6.2485046,
+    "lng": -75.5675767
+  },
+  {
+    "id_tienda": "T73",
+    "nombre": "DROGAS LA GARANTIA (BELEN)",
+    "zona": "ZONA 3-BELEN 2",
+    "url_ubicacion": "https://maps.app.goo.gl/1Kr5Dx8nY2BZX6vv6",
+    "lat": 6.2317233,
+    "lng": -75.5915955
+  },
+  {
+    "id_tienda": "T66",
+    "nombre": "DROGAS LA GARANTIA (GUAYABAL)",
+    "zona": "ZONA 3-BELEN 2",
+    "url_ubicacion": "https://maps.app.goo.gl/ppsbUvFQsGN6CmTN7",
+    "lat": 6.205068,
+    "lng": -75.5872732
+  },
+  {
+    "id_tienda": "T80",
+    "nombre": "DROGAS LA GARANTIA LA SEBASTIANA",
+    "zona": "ZONA 1- ENVIGADO",
+    "url_ubicacion": "https://maps.app.goo.gl/GYF1uXXUXdiE5yMC8",
+    "lat": 6.1662855,
+    "lng": -75.5694799
+  },
+  {
+    "id_tienda": "T377",
+    "nombre": "DROGUERÍA  PASTEUR CLINICA LAS VEGAS",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/WfHckPw9is8FYYeh8",
+    "lat": 6.2035249,
+    "lng": -75.5764343
+  },
+  {
+    "id_tienda": "T381",
+    "nombre": "DROGUERÍA  PASTEUR NATURE AQUA",
+    "zona": "SUR SABANETA",
+    "url_ubicacion": "https://maps.app.goo.gl/YFGf7772qHqqPw1Z8",
+    "lat": 6.1459334,
+    "lng": -75.6175926
+  },
+  {
+    "id_tienda": "T380",
+    "nombre": "DROGUERÍA  PASTEUR PRATTO",
+    "zona": "SAN ANTONIO DE PRADO",
+    "url_ubicacion": "https://maps.app.goo.gl/3z4UkhrzAsQurmY88",
+    "lat": 6.1671784,
+    "lng": -75.6480784
+  },
+  {
+    "id_tienda": "T255",
+    "nombre": "DROGUERIA PASTEUR AEROPUERTO OLAYA HERRERA",
+    "zona": "ZONA 3-BELEN 2",
+    "url_ubicacion": "https://maps.app.goo.gl/awFAhDRwAcJuV3RP6",
+    "lat": 6.2089724,
+    "lng": -75.5892414
+  },
+  {
+    "id_tienda": "T346",
+    "nombre": "DROGUERIA PASTEUR ALAMEDA EL RETIRO",
+    "zona": "ZONA 5-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/gUZFKeHeBUp2rtG8A",
+    "lat": 6.0628721,
+    "lng": -75.4997234
+  },
+  {
+    "id_tienda": "T397",
+    "nombre": "DROGUERIA PASTEUR ANDES",
+    "zona": "SUR OESTE - CONEXION 1",
+    "url_ubicacion": "https://maps.app.goo.gl/fW6bea4RbSPgEyac6",
+    "lat": 5.656413,
+    "lng": -75.878331
+  },
+  {
+    "id_tienda": "T386",
+    "nombre": "DROGUERIA PASTEUR ARANJUEZ",
+    "zona": "Medellin - Zona 2",
+    "url_ubicacion": "https://maps.app.goo.gl/zraFDb8eC1nTsqw96",
+    "lat": 6.2835341,
+    "lng": -75.558963
+  },
+  {
+    "id_tienda": "T331",
+    "nombre": "DROGUERIA PASTEUR AV. INDUSTRIALES",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/ZbYrrcHJGi89Em8u9",
+    "lat": 6.2224029,
+    "lng": -75.5748969
+  },
+  {
+    "id_tienda": "T290",
+    "nombre": "DROGUERIA PASTEUR AVENIDA JARDIN LAURELES",
+    "zona": "ZONA 3-BELEN 1",
+    "url_ubicacion": "https://maps.app.goo.gl/zcgBBLez3QhDcbTWA",
+    "lat": 6.2467946,
+    "lng": -75.5944522
+  },
+  {
+    "id_tienda": "T227",
+    "nombre": "DROGUERIA PASTEUR BUEN GENIO",
+    "zona": "ZONA 4-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/vg9QmGfXgFGMwbrPA",
+    "lat": 6.1091326,
+    "lng": -75.4230458
+  },
+  {
+    "id_tienda": "T252",
+    "nombre": "DROGUERIA PASTEUR CABAÑAS",
+    "zona": "BELLO",
+    "url_ubicacion": "https://maps.app.goo.gl/G26cKRPgiiN19rzq7",
+    "lat": 6.3162259,
+    "lng": -75.5653526
+  },
+  {
+    "id_tienda": "T280",
+    "nombre": "DROGUERIA PASTEUR CARMEN DE VIBORAL HOSPITAL",
+    "zona": "CARMEN - ZONA 1",
+    "url_ubicacion": "https://maps.app.goo.gl/aesnCJbHNWpGsaxE7",
+    "lat": 6.0763208,
+    "lng": -75.3327408
+  },
+  {
+    "id_tienda": "T256",
+    "nombre": "DROGUERIA PASTEUR CASA DEL GRANJERO",
+    "zona": "ZONA 4-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/CurYhbhhuRPgLHza8",
+    "lat": 6.1247613,
+    "lng": -75.4199586
+  },
+  {
+    "id_tienda": "T392",
+    "nombre": "DROGUERIA PASTEUR CASTILLA",
+    "zona": "ZONA 3-BELEN 1",
+    "url_ubicacion": "https://maps.app.goo.gl/tJkSWVZa6bkFqR7z6",
+    "lat": 6.292752,
+    "lng": -75.571448
+  },
+  {
+    "id_tienda": "T310",
+    "nombre": "DROGUERIA PASTEUR CIUDAD BOLIVAR",
+    "zona": "SUR OESTE - CONEXION 1",
+    "url_ubicacion": "https://maps.app.goo.gl/rgHvWsc6EfCJFYJZA",
+    "lat": 5.8499359,
+    "lng": -76.019902
+  },
+  {
+    "id_tienda": "T241",
+    "nombre": "DROGUERIA PASTEUR CIUDAD DEL RIO",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/zjum7bGdADBGYN1dA",
+    "lat": 6.2210292,
+    "lng": -75.5749438
+  },
+  {
+    "id_tienda": "T329",
+    "nombre": "DROGUERIA PASTEUR CLINICA DEL ROSARIO",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/8yGNLqrBNqHK6bHZA",
+    "lat": 6.1939217,
+    "lng": -75.5573628
+  },
+  {
+    "id_tienda": "T343",
+    "nombre": "DROGUERIA PASTEUR CLINICA SOMER",
+    "zona": "ZONA 3-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/9tUf1Dx4LPWKUYDW6",
+    "lat": 6.1411463,
+    "lng": -75.3771625
+  },
+  {
+    "id_tienda": "T360",
+    "nombre": "DROGUERIA PASTEUR COLISEO JARDIN",
+    "zona": "SUR OESTE - CONEXION 1",
+    "url_ubicacion": "https://maps.app.goo.gl/g7Pe2SJpkB5QCfYq5",
+    "lat": 5.5965564,
+    "lng": -75.8142014
+  },
+  {
+    "id_tienda": "T391",
+    "nombre": "DROGUERIA PASTEUR COMUNA 13",
+    "zona": "ZONA 3-BELEN 1",
+    "url_ubicacion": "https://maps.app.goo.gl/mXatbTEV7jWSpHyS8",
+    "lat": 6.250872,
+    "lng": -75.621632
+  },
+  {
+    "id_tienda": "T264",
+    "nombre": "DROGUERIA PASTEUR DISTRITO AVIGNON",
+    "zona": "ZONA 1- ENVIGADO",
+    "url_ubicacion": "https://maps.app.goo.gl/54aFr2oTp9QCn9KT8",
+    "lat": 6.1758638,
+    "lng": -75.5673111
+  },
+  {
+    "id_tienda": "T297",
+    "nombre": "DROGUERÍA PASTEUR E.D.S INDUSTRIALES",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/kLtrQvYJGqxWGCSv8",
+    "lat": 6.2183622,
+    "lng": -75.5765286
+  },
+  {
+    "id_tienda": "T231",
+    "nombre": "DROGUERIA PASTEUR EL HATO",
+    "zona": "ZONA 1-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/Z69HreJtS9iawmKh6",
+    "lat": 6.1764429,
+    "lng": -75.3447508
+  },
+  {
+    "id_tienda": "T230",
+    "nombre": "DROGUERIA PASTEUR EL PEÑOL",
+    "zona": "ZONA 1-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/CkLdr7GWMYKZnKeR7",
+    "lat": 6.2162465,
+    "lng": -75.237951
+  },
+  {
+    "id_tienda": "T276",
+    "nombre": "DROGUERIA PASTEUR EL PEÑOL CONQUISTADORES",
+    "zona": "ZONA 1-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/U9NDzSrLYtUMdai2A",
+    "lat": 6.2179956,
+    "lng": -75.2426322
+  },
+  {
+    "id_tienda": "T261",
+    "nombre": "DROGUERIA PASTEUR ESMERALDAL",
+    "zona": "ZONA 1- ENVIGADO",
+    "url_ubicacion": "https://maps.app.goo.gl/ZgEGjnCoG1gypC376",
+    "lat": 6.1740771,
+    "lng": -75.5747906
+  },
+  {
+    "id_tienda": "T337",
+    "nombre": "DROGUERIA PASTEUR ESMERALDAL PLAZA",
+    "zona": "ZONA 1- ENVIGADO",
+    "url_ubicacion": "https://maps.app.goo.gl/ibU8u5cCdtgm25F68",
+    "lat": 6.1730571,
+    "lng": -75.5688032
+  },
+  {
+    "id_tienda": "T222",
+    "nombre": "DROGUERIA PASTEUR ESTACION 52",
+    "zona": "ZONA 3-ITAGUI",
+    "url_ubicacion": "https://maps.app.goo.gl/KTxfwN6bLG1wKtAg6",
+    "lat": 6.1897954,
+    "lng": -75.5952348
+  },
+  {
+    "id_tienda": "T356",
+    "nombre": "DROGUERIA PASTEUR FREDONIA",
+    "zona": "SUR OESTE - CONEXION 1",
+    "url_ubicacion": "https://maps.app.goo.gl/LJTytKmwHKgwdyYQ9",
+    "lat": 5.9268706,
+    "lng": -75.6711702
+  },
+  {
+    "id_tienda": "T389",
+    "nombre": "DROGUERIA PASTEUR GUATAPE",
+    "zona": "ZONA 1-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/5o4z44dLGXyK9xqR7",
+    "lat": 6.233519,
+    "lng": -75.161657
+  },
+  {
+    "id_tienda": "T246",
+    "nombre": "DROGUERIA PASTEUR HOSPITAL SABANETA",
+    "zona": "SUR SABANETA",
+    "url_ubicacion": "https://maps.app.goo.gl/wKqdzkqk5ChTN34r9",
+    "lat": 6.1492302,
+    "lng": -75.6223907
+  },
+  {
+    "id_tienda": "T274",
+    "nombre": "DROGUERIA PASTEUR IGLESIA LOS DOLORES",
+    "zona": "SUR SABANETA",
+    "url_ubicacion": "https://maps.app.goo.gl/CKNnddPJmvuUXc2f9",
+    "lat": 6.1499987,
+    "lng": -75.6230804
+  },
+  {
+    "id_tienda": "T340",
+    "nombre": "DROGUERIA PASTEUR INDIANA MALL MEDELLIN",
+    "zona": "ALTO DE PALMAS",
+    "url_ubicacion": "https://maps.app.goo.gl/MC8nb3TFNvRgKKRB6",
+    "lat": 6.1541943,
+    "lng": -75.5325119
+  },
+  {
+    "id_tienda": "T342",
+    "nombre": "DROGUERIA PASTEUR JARDIN",
+    "zona": "SUR OESTE - CONEXION 1",
+    "url_ubicacion": "https://maps.app.goo.gl/AxGQ1CoBskp7tEa2A",
+    "lat": 5.598161,
+    "lng": -75.820105
+  },
+  {
+    "id_tienda": "T302",
+    "nombre": "DROGUERÍA PASTEUR LA  CEJA  MALL CIUDAD",
+    "zona": "ZONA 2-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/XQ9uH5Zwa86FQTm58",
+    "lat": 6.0280951,
+    "lng": -75.4237411
+  },
+  {
+    "id_tienda": "T223",
+    "nombre": "DROGUERIA PASTEUR LA 10",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/FTqTqshcZuLvfvTe9",
+    "lat": 6.2093553,
+    "lng": -75.5675631
+  },
+  {
+    "id_tienda": "T393",
+    "nombre": "DROGUERIA PASTEUR LA 58 CABAÑAS",
+    "zona": "BELLO",
+    "url_ubicacion": "https://maps.app.goo.gl/XYRjgSxGXZqL7FBZA",
+    "lat": 6.3135018,
+    "lng": -75.5635473
+  },
+  {
+    "id_tienda": "T351",
+    "nombre": "DROGUERIA PASTEUR LA 76 BELEN",
+    "zona": "ZONA 3-BELEN 2",
+    "url_ubicacion": "https://maps.app.goo.gl/cQRVCKFXK24BXsai8",
+    "lat": 6.2305946,
+    "lng": -75.5960262
+  },
+  {
+    "id_tienda": "T168",
+    "nombre": "DROGUERIA PASTEUR LA 78",
+    "zona": "ZONA 3-BELEN 1",
+    "url_ubicacion": "https://maps.app.goo.gl/EBNMUGq2pEvwbz2b6",
+    "lat": 6.2506021,
+    "lng": -75.5969379
+  },
+  {
+    "id_tienda": "T352",
+    "nombre": "DROGUERIA PASTEUR LA CANTALETA",
+    "zona": "ZONA 5-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/S1BizWS1UHZPJKwV7",
+    "lat": 6.0919926,
+    "lng": -75.4828397
+  },
+  {
+    "id_tienda": "T376",
+    "nombre": "DROGUERIA PASTEUR LA CEJA CARRERA 21",
+    "zona": "ZONA 2-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/QwSYT9jCa5AFxcfd8",
+    "lat": 6.0328306,
+    "lng": -75.4314236
+  },
+  {
+    "id_tienda": "T298",
+    "nombre": "DROGUERÍA PASTEUR LA CEJA LA CRUZ",
+    "zona": "ZONA 2-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/U9BNfqZpdf2eMzRUA",
+    "lat": 6.022641,
+    "lng": -75.433431
+  },
+  {
+    "id_tienda": "T279",
+    "nombre": "DROGUERIA PASTEUR LA CEJA PAYUCO",
+    "zona": "ZONA 2-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/8dqJ7gH6ipR5coyy8",
+    "lat": 6.0267903,
+    "lng": -75.4342894
+  },
+  {
+    "id_tienda": "T354",
+    "nombre": "DROGUERIA PASTEUR LA DESPENSA",
+    "zona": "SUR OESTE - CONEXION 1",
+    "url_ubicacion": "https://maps.app.goo.gl/nuajatjjCbgqki7s9",
+    "lat": 6.0325283,
+    "lng": -75.6890667
+  },
+  {
+    "id_tienda": "T332",
+    "nombre": "DROGUERIA PASTEUR LA UNION",
+    "zona": "UNION - ZONA 1",
+    "url_ubicacion": "https://maps.app.goo.gl/ZY7Gn2Vz1sWjNkui7",
+    "lat": 5.9745093,
+    "lng": -75.3619506
+  },
+  {
+    "id_tienda": "T350",
+    "nombre": "DROGUERIA PASTEUR LAS VEGAS SABANETA",
+    "zona": "SUR SABANETA",
+    "url_ubicacion": "https://maps.app.goo.gl/fFhYgru8v3BEqw2v8",
+    "lat": 6.1539828,
+    "lng": -75.6172569
+  },
+  {
+    "id_tienda": "T361",
+    "nombre": "DROGUERIA PASTEUR LIVING SABANETA",
+    "zona": "SUR SABANETA",
+    "url_ubicacion": "https://maps.app.goo.gl/8D2PdLQsvpJZ6zax5",
+    "lat": 6.1528122,
+    "lng": -75.6109973
+  },
+  {
+    "id_tienda": "T266",
+    "nombre": "DROGUERIA PASTEUR LOS CEREZOS",
+    "zona": "ZONA 3-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/3w9eF4GQ86SLQ9ZE8",
+    "lat": 6.1642317,
+    "lng": -75.3739522
+  },
+  {
+    "id_tienda": "T323",
+    "nombre": "DROGUERIA PASTEUR MADEROS DEL RETIRO",
+    "zona": "ZONA 5-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/nnU81am9mCjjgFs18",
+    "lat": 6.0606859,
+    "lng": -75.5031183
+  },
+  {
+    "id_tienda": "T293",
+    "nombre": "DROGUERIA PASTEUR MAJAGUA BELLO",
+    "zona": "BELLO",
+    "url_ubicacion": "https://maps.app.goo.gl/z94XoUPQhXXDehZf7",
+    "lat": 6.3397243,
+    "lng": -75.5725501
+  },
+  {
+    "id_tienda": "T336",
+    "nombre": "DROGUERIA PASTEUR MALL ESTACION NIQUIA",
+    "zona": "BELLO",
+    "url_ubicacion": "https://maps.app.goo.gl/nyKRPgcYpwF4SDLZ8",
+    "lat": 6.3393724,
+    "lng": -75.5448168
+  },
+  {
+    "id_tienda": "T373",
+    "nombre": "DROGUERIA PASTEUR MALL MADEOCCIDENTE",
+    "zona": "OCCIDENTE ANTIOQUIA - ZONA 1",
+    "url_ubicacion": "https://maps.app.goo.gl/agqxX8WBhK3kyq127",
+    "lat": 6.394786,
+    "lng": -75.7209089
+  },
+  {
+    "id_tienda": "T388",
+    "nombre": "DROGUERIA PASTEUR MAXI OFERTAS COPACABANA",
+    "zona": "Zona Norte Lejana",
+    "url_ubicacion": "https://maps.app.goo.gl/oPJnYVo6sd1BTn2C7",
+    "lat": 6.3456686,
+    "lng": -75.5104388
+  },
+  {
+    "id_tienda": "T300",
+    "nombre": "DROGUERÍA PASTEUR METROPOLITAN SAN DIEGO",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/Urps1nPAgMtSWpDL7",
+    "lat": 6.2334612,
+    "lng": -75.5691944
+  },
+  {
+    "id_tienda": "T251",
+    "nombre": "DROGUERIA PASTEUR MIXY",
+    "zona": "ZONA 3-BELEN 1",
+    "url_ubicacion": "https://maps.app.goo.gl/cKeaSkDUfgmMmXCx6",
+    "lat": 6.2697472,
+    "lng": -75.5950723
+  },
+  {
+    "id_tienda": "T239",
+    "nombre": "DROGUERIA PASTEUR MONTERREY",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/KMYFXn5UCyB6UWBe7",
+    "lat": 6.2141543,
+    "lng": -75.5767934
+  },
+  {
+    "id_tienda": "T374",
+    "nombre": "DROGUERIA PASTEUR MONTEVENTO",
+    "zona": "ZONA 1- ENVIGADO",
+    "url_ubicacion": "https://maps.app.goo.gl/QU8ga5jxgFNg3Wpe9",
+    "lat": 6.1571189,
+    "lng": -75.5781391
+  },
+  {
+    "id_tienda": "T321",
+    "nombre": "DROGUERIA PASTEUR OBELISCO",
+    "zona": "ZONA 3-BELEN 1",
+    "url_ubicacion": "https://maps.app.goo.gl/tXpPonh6Ayjztpcu7",
+    "lat": 6.2581961,
+    "lng": -75.5914106
+  },
+  {
+    "id_tienda": "T253",
+    "nombre": "DROGUERIA PASTEUR OVIEDO # 2",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/FrdNDLtDmwB6uwSG8",
+    "lat": 6.1989829,
+    "lng": -75.5739021
+  },
+  {
+    "id_tienda": "T286",
+    "nombre": "DROGUERIA PASTEUR OVIEDO # 3",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/WinUX4nRiW461v8p6",
+    "lat": 6.198928,
+    "lng": -75.574633
+  },
+  {
+    "id_tienda": "T326",
+    "nombre": "DROGUERIA PASTEUR PADRE MARIANITO",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/AJ3rrePR42aYG2PG8",
+    "lat": 6.2164107,
+    "lng": -75.5569005
+  },
+  {
+    "id_tienda": "T69",
+    "nombre": "DROGUERIA PASTEUR PALACIO ARANGO",
+    "zona": "Medellin - Zona 2",
+    "url_ubicacion": "https://maps.app.goo.gl/b9H9efnJ4sJgzUYo6",
+    "lat": 6.2474167,
+    "lng": -75.5679444
+  },
+  {
+    "id_tienda": "T387",
+    "nombre": "DROGUERIA PASTEUR PARQUE DE BARBOSA",
+    "zona": "Zona Norte Lejana",
+    "url_ubicacion": "https://maps.app.goo.gl/F9Q9vz4LznLJBL27A",
+    "lat": 6.4372939,
+    "lng": -75.3308396
+  },
+  {
+    "id_tienda": "T398",
+    "nombre": "DROGUERIA PASTEUR PARQUE DE JARDIN",
+    "zona": "SUR OESTE - CONEXION 1",
+    "url_ubicacion": "https://maps.app.goo.gl/tnxEnoWYEm8Gua2V9",
+    "lat": 5.5994105,
+    "lng": -75.8190629
+  },
+  {
+    "id_tienda": "T232",
+    "nombre": "DROGUERIA PASTEUR PARQUE DE RIONEGRO",
+    "zona": "ZONA 3-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/jGTEBvyyH5nQSQrL8",
+    "lat": 6.1532862,
+    "lng": -75.3735084
+  },
+  {
+    "id_tienda": "T294",
+    "nombre": "DROGUERIA PASTEUR PARQUE DE URRAO",
+    "zona": "SUR OESTE - CONEXION 1",
+    "url_ubicacion": "https://maps.app.goo.gl/9nFEKafLwXpgwgb5A",
+    "lat": 6.3163914,
+    "lng": -76.1341382
+  },
+  {
+    "id_tienda": "T217",
+    "nombre": "DROGUERIA PASTEUR PARQUE EL RETIRO",
+    "zona": "ZONA 5-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/yw4CtsE5HTJYFdPs5",
+    "lat": 6.0575794,
+    "lng": -75.5024236
+  },
+  {
+    "id_tienda": "T338",
+    "nombre": "DROGUERIA PASTEUR PASAJE MARINILLA",
+    "zona": "ZONA 1-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/6M5RtmjrS73QECQJ8",
+    "lat": 6.1741132,
+    "lng": -75.3361043
+  },
+  {
+    "id_tienda": "T248",
+    "nombre": "DROGUERIA PASTEUR PLAZA FABRICATO",
+    "zona": "BELLO",
+    "url_ubicacion": "https://maps.app.goo.gl/ctBFJBUmcK8nTw2B9",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "id_tienda": "T379",
+    "nombre": "DROGUERIA PASTEUR PLAZA LOS BERNAL",
+    "zona": "ZONA 3-BELEN 2",
+    "url_ubicacion": "https://maps.app.goo.gl/x8dUqCQGKvueyp4p8",
+    "lat": 6.215984,
+    "lng": -75.605435
+  },
+  {
+    "id_tienda": "T288",
+    "nombre": "DROGUERIA PASTEUR PLAZA RIOGRANDE RIONEGRO",
+    "zona": "ZONA 3-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/8g6CNMv3xsahCWMBA",
+    "lat": 6.1436326,
+    "lng": -75.3715432
+  },
+  {
+    "id_tienda": "T258",
+    "nombre": "DROGUERIA PASTEUR PONTEZUELA",
+    "zona": "ZONA 4-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/emf1nnSQeHDLapfh7",
+    "lat": 6.0844848,
+    "lng": -75.4261764
+  },
+  {
+    "id_tienda": "T235",
+    "nombre": "DROGUERIA PASTEUR PREMIUM PLAZA",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/VAaTJhvqbekkHmfG8",
+    "lat": 6.2288925,
+    "lng": -75.5707564
+  },
+  {
+    "id_tienda": "T366",
+    "nombre": "DROGUERIA PASTEUR RIO DEL ESTE",
+    "zona": "ZONA 3-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/NScaFqXzgxiHDyCY6",
+    "lat": 6.1515663,
+    "lng": -75.3909185
+  },
+  {
+    "id_tienda": "T250",
+    "nombre": "DROGUERIA PASTEUR SALUD VEGAS",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/2BW1MDWxyoqAb17Z6",
+    "lat": 6.2041515,
+    "lng": -75.576715
+  },
+  {
+    "id_tienda": "T296",
+    "nombre": "DROGUERIA PASTEUR SAN BARTOLO SAN ANTONIO DE PEREI",
+    "zona": "ZONA 3-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/gLdtYfNYejEdkJ859",
+    "lat": 6.1270949,
+    "lng": -75.3834951
+  },
+  {
+    "id_tienda": "T221",
+    "nombre": "DROGUERIA PASTEUR SAN JUAN",
+    "zona": "ZONA 3-BELEN 1",
+    "url_ubicacion": "https://maps.app.goo.gl/7hMo8CQeifzhccB48",
+    "lat": 6.2510833,
+    "lng": -75.6052778
+  },
+  {
+    "id_tienda": "T289",
+    "nombre": "DROGUERIA PASTEUR SAN JUAN # 2",
+    "zona": "ZONA 3-BELEN 1",
+    "url_ubicacion": "https://maps.app.goo.gl/4EjEo3EccMvKqR9v6",
+    "lat": 6.2505786,
+    "lng": -75.6043673
+  },
+  {
+    "id_tienda": "T292",
+    "nombre": "DROGUERIA PASTEUR SAN REMO SABANETA",
+    "zona": "SUR SABANETA",
+    "url_ubicacion": "https://maps.app.goo.gl/SNdpHTUVZEbi4eQLA",
+    "lat": 6.144261,
+    "lng": -75.621481
+  },
+  {
+    "id_tienda": "T390",
+    "nombre": "DROGUERIA PASTEUR SANTA ELENA",
+    "zona": "SANTA ELENA - ZONA 1",
+    "url_ubicacion": "https://maps.app.goo.gl/PmmCy73AHLg464fq8",
+    "lat": 6.2046616,
+    "lng": -75.4863877
+  },
+  {
+    "id_tienda": "T287",
+    "nombre": "DROGUERIA PASTEUR SANTA MARIA DE LOS ANGELES",
+    "zona": "ZONA 1- ENVIGADO",
+    "url_ubicacion": "https://maps.app.goo.gl/xewNhGb9K9aqcoAz8",
+    "lat": 6.1923355,
+    "lng": -75.5774302
+  },
+  {
+    "id_tienda": "T169",
+    "nombre": "DROGUERIA PASTEUR SANTAFE DE ANTIOQUIA",
+    "zona": "OCCIDENTE ANTIOQUIA - ZONA 1",
+    "url_ubicacion": "https://maps.app.goo.gl/QCQNBqFgh1nJJNHUA",
+    "lat": 6.556155,
+    "lng": -75.8282219
+  },
+  {
+    "id_tienda": "T271",
+    "nombre": "DROGUERIA PASTEUR SANTAFE MEDELLIN",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/NB2gY8iDRzYFUJp56",
+    "lat": 6.196852,
+    "lng": -75.574351
+  },
+  {
+    "id_tienda": "T399",
+    "nombre": "DROGUERIA PASTEUR SONSON",
+    "zona": "SONSON - ZONA 1",
+    "url_ubicacion": "https://maps.app.goo.gl/visjBbp9jimoVCwg8",
+    "lat": 5.7119521,
+    "lng": -75.3101678
+  },
+  {
+    "id_tienda": "T401",
+    "nombre": "DROGUERIA PASTEUR SOPETRAN",
+    "zona": "OCCIDENTE ANTIOQUIA - ZONA 1",
+    "url_ubicacion": "https://maps.app.goo.gl/nZgaP7twG5NckduM7",
+    "lat": 6.5015794,
+    "lng": -75.7465321
+  },
+  {
+    "id_tienda": "T259",
+    "nombre": "DROGUERIA PASTEUR TERPEL MONTEMADERO",
+    "zona": "ZONA 2-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/qfS9xxx7q3zfUidg6",
+    "lat": 6.0461857,
+    "lng": -75.397447
+  },
+  {
+    "id_tienda": "T365",
+    "nombre": "DROGUERIA PASTEUR TEZENDA",
+    "zona": "CARMEN - ZONA 1",
+    "url_ubicacion": "https://maps.app.goo.gl/NhLzyzuAyhHCE68S7",
+    "lat": 6.0650395,
+    "lng": -75.3823757
+  },
+  {
+    "id_tienda": "T327",
+    "nombre": "DROGUERIA PASTEUR TRAPICHE SABANETA",
+    "zona": "SUR SABANETA",
+    "url_ubicacion": "https://maps.app.goo.gl/J73a5gVnoRTEeVYw8",
+    "lat": 6.1449734,
+    "lng": -75.62105
+  },
+  {
+    "id_tienda": "T335",
+    "nombre": "DROGUERIA PASTEUR UNICENTRO MEDELLIN",
+    "zona": "ZONA 3-BELEN 2",
+    "url_ubicacion": "https://maps.app.goo.gl/ALzbgiRqSD2b42pM9",
+    "lat": 6.2412282,
+    "lng": -75.58679
+  },
+  {
+    "id_tienda": "T357",
+    "nombre": "DROGUERIA PASTEUR URBANITY",
+    "zona": "ZONA 3-BELEN 2",
+    "url_ubicacion": "https://maps.app.goo.gl/nr1DguHNhd3VeWWc6",
+    "lat": 6.2220929,
+    "lng": -75.5776753
+  },
+  {
+    "id_tienda": "T260",
+    "nombre": "DROGUERIA PASTEUR VARIANTE DE CALDAS",
+    "zona": "CALDAS",
+    "url_ubicacion": "https://maps.app.goo.gl/9Wqh3Ny2eyWgMTvZ8",
+    "lat": 6.0974842,
+    "lng": -75.6345311
+  },
+  {
+    "id_tienda": "T363",
+    "nombre": "DROGUERIA PASTEUR VARIANTE SANTA FE DE ANTIOQUIA",
+    "zona": "OCCIDENTE ANTIOQUIA - ZONA 1",
+    "url_ubicacion": "https://maps.app.goo.gl/MnhYotVQhiqdLinc9",
+    "lat": 6.5574581,
+    "lng": -75.8249359
+  },
+  {
+    "id_tienda": "T50",
+    "nombre": "DROGUERIA PASTEUR VEGAS 10",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/qnQarfsUP1NLUpzt7",
+    "lat": 6.2125554,
+    "lng": -75.5760232
+  },
+  {
+    "id_tienda": "T371",
+    "nombre": "DROGUERIA PASTEUR VIVARI",
+    "zona": "ZONA 3-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/gegLRwzYV9QvAy2n9",
+    "lat": 6.1483765,
+    "lng": -75.3801551
+  },
+  {
+    "id_tienda": "T18",
+    "nombre": "DROGUERIAS PROMOPRECIOS PARQUE DE SAN ANTONIO",
+    "zona": "Medellin - Zona 2",
+    "url_ubicacion": "https://maps.app.goo.gl/LEZDKWHTciMB5FR76",
+    "lat": 6.2457463,
+    "lng": -75.5687511
+  },
+  {
+    "id_tienda": "T24",
+    "nombre": "FARMACIA PASTEUR (CALAZANS)",
+    "zona": "ZONA 3-BELEN 1",
+    "url_ubicacion": "https://maps.app.goo.gl/X8EGE6U9z7pqxZcJ6",
+    "lat": 6.2599248,
+    "lng": -75.5973738
+  },
+  {
+    "id_tienda": "T21",
+    "nombre": "FARMACIA PASTEUR (CAMPESTRE)",
+    "zona": "ZONA 1- ENVIGADO",
+    "url_ubicacion": "https://maps.app.goo.gl/BkykfVmA3vQm16SX6",
+    "lat": 6.1859529,
+    "lng": -75.5692264
+  },
+  {
+    "id_tienda": "T11",
+    "nombre": "FARMACIA PASTEUR (CARABOBO)",
+    "zona": "Medellin - Zona 2",
+    "url_ubicacion": "https://maps.app.goo.gl/ZUB7o1tMBJFDuctq6",
+    "lat": 6.2503277,
+    "lng": -75.5695506
+  },
+  {
+    "id_tienda": "T13",
+    "nombre": "FARMACIA PASTEUR (COLOMBIA)",
+    "zona": "Medellin - Zona 2",
+    "url_ubicacion": "https://maps.app.goo.gl/CSqrTrYvXm7EiQdx8",
+    "lat": 6.250526,
+    "lng": -75.5705332
+  },
+  {
+    "id_tienda": "T27",
+    "nombre": "FARMACIA PASTEUR (ENVIGADO)",
+    "zona": "ZONA 1- ENVIGADO",
+    "url_ubicacion": "https://maps.app.goo.gl/Y7jipZY9unU9gE6z5",
+    "lat": 6.1708819,
+    "lng": -75.5874249
+  },
+  {
+    "id_tienda": "T25",
+    "nombre": "FARMACIA PASTEUR (JUNIN)",
+    "zona": "Medellin - Zona 2",
+    "url_ubicacion": "https://maps.app.goo.gl/qSZaQouM54gLYM9Z9",
+    "lat": 6.2495429,
+    "lng": -75.5667101
+  },
+  {
+    "id_tienda": "T57",
+    "nombre": "FARMACIA PASTEUR (MATURIN)",
+    "zona": "Medellin - Zona 2",
+    "url_ubicacion": "https://maps.app.goo.gl/DfWkN1cdRSiiJwjw9",
+    "lat": 6.247054,
+    "lng": -75.5705746
+  },
+  {
+    "id_tienda": "T76",
+    "nombre": "FARMACIA PASTEUR (NUTIBARA)",
+    "zona": "Medellin - Zona 2",
+    "url_ubicacion": "https://maps.app.goo.gl/mvucR5d9og4iDwZh6",
+    "lat": 6.244018,
+    "lng": -75.594034
+  },
+  {
+    "id_tienda": "T12",
+    "nombre": "FARMACIA PASTEUR (ORIENTAL)",
+    "zona": "Medellin - Zona 2",
+    "url_ubicacion": "https://maps.app.goo.gl/n4RckE2F8KSxtnkE7",
+    "lat": 6.2473008,
+    "lng": -75.5662477
+  },
+  {
+    "id_tienda": "T22",
+    "nombre": "FARMACIA PASTEUR (OVIEDO)",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/JvfcnesGMNcUohF18",
+    "lat": 6.2007267,
+    "lng": -75.5757171
+  },
+  {
+    "id_tienda": "T14",
+    "nombre": "FARMACIA PASTEUR (PICHINCHA)",
+    "zona": "Medellin - Zona 2",
+    "url_ubicacion": "https://maps.app.goo.gl/8sDRfFVYbaj4GxEq5",
+    "lat": 6.248483,
+    "lng": -75.5699181
+  },
+  {
+    "id_tienda": "T26",
+    "nombre": "FARMACIA PASTEUR (POBLADO)",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/3AmZPyrMm6EjkTTy5",
+    "lat": 6.2089759,
+    "lng": -75.5708599
+  },
+  {
+    "id_tienda": "T220",
+    "nombre": "FARMACIA PASTEUR AEROCENTRO",
+    "zona": "ZONA 4-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/7ZcF7SCMQPbzSLTE8",
+    "lat": 6.1791667,
+    "lng": -75.4414899
+  },
+  {
+    "id_tienda": "T148",
+    "nombre": "FARMACIA PASTEUR AEROPUERTO JMC",
+    "zona": "ZONA 3-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/kyHB4B1zJjB4Db9A6",
+    "lat": 6.1704447,
+    "lng": -75.4278491
+  },
+  {
+    "id_tienda": "T201",
+    "nombre": "FARMACIA PASTEUR ALMACENTRO",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/7yT7eCLocEjoKckt7",
+    "lat": 6.2352909,
+    "lng": -75.5706878
+  },
+  {
+    "id_tienda": "T198",
+    "nombre": "FARMACIA PASTEUR ALMENDRA",
+    "zona": "ZONA 3-BELEN 1",
+    "url_ubicacion": "https://maps.app.goo.gl/AwGBu2L3ptAFAhL8A",
+    "lat": 6.27538,
+    "lng": -75.583769
+  },
+  {
+    "id_tienda": "T104",
+    "nombre": "FARMACIA PASTEUR ARBOLEDA DEL RODEO",
+    "zona": "ZONA 3-BELEN 2",
+    "url_ubicacion": "https://maps.app.goo.gl/pjAuqdCpY8FgxhYR7",
+    "lat": 6.2025615,
+    "lng": -75.6015537
+  },
+  {
+    "id_tienda": "T216",
+    "nombre": "FARMACIA PASTEUR ARKADIA",
+    "zona": "ZONA 3-BELEN 2",
+    "url_ubicacion": "https://maps.app.goo.gl/wGyrvEGpZ1j1NiT16",
+    "lat": 6.2120973,
+    "lng": -75.5946407
+  },
+  {
+    "id_tienda": "T186",
+    "nombre": "FARMACIA PASTEUR ARRAYANES",
+    "zona": "ZONA 3-ITAGUI",
+    "url_ubicacion": "https://maps.app.goo.gl/XYXuVGNANNC4msKk8",
+    "lat": 6.1673639,
+    "lng": -75.6194233
+  },
+  {
+    "id_tienda": "T215",
+    "nombre": "FARMACIA PASTEUR AUTOPISTA SUR",
+    "zona": "ZONA 3-ITAGUI",
+    "url_ubicacion": "https://maps.app.goo.gl/irYzYp9D4mTxNVSR9",
+    "lat": 6.1670986,
+    "lng": -75.607541
+  },
+  {
+    "id_tienda": "T149",
+    "nombre": "FARMACIA PASTEUR AVENTURA",
+    "zona": "Medellin - Zona 2",
+    "url_ubicacion": "https://maps.app.goo.gl/fd7F5LtLFSD3Yk1Y8",
+    "lat": 6.263672,
+    "lng": -75.566711
+  },
+  {
+    "id_tienda": "T190",
+    "nombre": "FARMACIA PASTEUR AVES MARIA",
+    "zona": "SUR SABANETA",
+    "url_ubicacion": "https://maps.app.goo.gl/wKqdzkqk5ChTN34r9",
+    "lat": 6.1492302,
+    "lng": -75.6223907
+  },
+  {
+    "id_tienda": "T87",
+    "nombre": "FARMACIA PASTEUR BANCOLOMBIA",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/VQPQyRQL5sHpNrie7",
+    "lat": 6.2278219,
+    "lng": -75.5750808
+  },
+  {
+    "id_tienda": "T67",
+    "nombre": "FARMACIA PASTEUR BARBOSA",
+    "zona": "Zona Norte Lejana",
+    "url_ubicacion": "https://maps.app.goo.gl/yFRkog93QKs23cHH9",
+    "lat": 6.437142,
+    "lng": -75.331844
+  },
+  {
+    "id_tienda": "T32",
+    "nombre": "FARMACIA PASTEUR BELLO",
+    "zona": "BELLO",
+    "url_ubicacion": "https://maps.app.goo.gl/v5o2KN477pev6fFf6",
+    "lat": 6.334599,
+    "lng": -75.557715
+  },
+  {
+    "id_tienda": "T8",
+    "nombre": "FARMACIA PASTEUR BOMBONA",
+    "zona": "Medellin - Zona 2",
+    "url_ubicacion": "https://maps.app.goo.gl/ofjHsYBpnY8fwrbQ6",
+    "lat": 6.2452712,
+    "lng": -75.5636878
+  },
+  {
+    "id_tienda": "T140",
+    "nombre": "FARMACIA PASTEUR BOSQUE PLAZA",
+    "zona": "Medellin - Zona 2",
+    "url_ubicacion": "https://maps.app.goo.gl/UjNis263juSExMmq6",
+    "lat": 6.2686148,
+    "lng": -75.5651239
+  },
+  {
+    "id_tienda": "T38",
+    "nombre": "FARMACIA PASTEUR BOSTON",
+    "zona": "Medellin - Zona 2",
+    "url_ubicacion": "https://maps.app.goo.gl/Sfi91aQZqtTNkdjy5",
+    "lat": 6.2478165,
+    "lng": -75.5581007
+  },
+  {
+    "id_tienda": "T42",
+    "nombre": "FARMACIA PASTEUR BUENOS AIRES",
+    "zona": "Medellin - Zona 2",
+    "url_ubicacion": "https://maps.app.goo.gl/Pz8YmoqGYe5x8XDx9",
+    "lat": 6.2418421,
+    "lng": -75.5550933
+  },
+  {
+    "id_tienda": "T33",
+    "nombre": "FARMACIA PASTEUR CALDAS",
+    "zona": "CALDAS",
+    "url_ubicacion": "https://maps.app.goo.gl/xXiZd9ATFzqnPwPFA",
+    "lat": 6.0915461,
+    "lng": -75.6361218
+  },
+  {
+    "id_tienda": "T125",
+    "nombre": "FARMACIA PASTEUR CANTABRIA",
+    "zona": "ZONA 3-BELEN 2",
+    "url_ubicacion": "https://maps.app.goo.gl/tFB3oBdwvFeZpLtH9",
+    "lat": 6.2193073,
+    "lng": -75.6037795
+  },
+  {
+    "id_tienda": "T130",
+    "nombre": "FARMACIA PASTEUR CARMEN DE VIBORAL",
+    "zona": "CARMEN - ZONA 1",
+    "url_ubicacion": "https://maps.app.goo.gl/ReQ1yukC6SZ2UheR9",
+    "lat": 6.0823382,
+    "lng": -75.3353965
+  },
+  {
+    "id_tienda": "T63",
+    "nombre": "FARMACIA PASTEUR COMPLEX LAS VEGAS",
+    "zona": "ZONA 1- ENVIGADO",
+    "url_ubicacion": "https://maps.app.goo.gl/CrYXCBSXMdA5VZQj9",
+    "lat": 6.1827458,
+    "lng": -75.5852974
+  },
+  {
+    "id_tienda": "T17",
+    "nombre": "FARMACIA PASTEUR CR 70",
+    "zona": "ZONA 3-BELEN 2",
+    "url_ubicacion": "https://maps.app.goo.gl/a48PHzPBAoDTSaYd7",
+    "lat": 6.2454609,
+    "lng": -75.5894005
+  },
+  {
+    "id_tienda": "T90",
+    "nombre": "FARMACIA PASTEUR DITAIRES",
+    "zona": "ZONA 3-ITAGUI",
+    "url_ubicacion": "https://maps.app.goo.gl/LaY2ZhKrmzdmf9hK9",
+    "lat": 6.170344,
+    "lng": -75.628329
+  },
+  {
+    "id_tienda": "T65",
+    "nombre": "FARMACIA PASTEUR DRUG STORE (VERONA)",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/6cW6qmoH2yXWjxft6",
+    "lat": 6.2066477,
+    "lng": -75.559809
+  },
+  {
+    "id_tienda": "T202",
+    "nombre": "FARMACIA PASTEUR E.D.S ZAMORA",
+    "zona": "BELLO",
+    "url_ubicacion": "https://maps.app.goo.gl/4rpd9qTG13VQnS4d9",
+    "lat": 6.3091324,
+    "lng": -75.5556506
+  },
+  {
+    "id_tienda": "T196",
+    "nombre": "FARMACIA PASTEUR EAFIT",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/AFyhdVfvkFiTGEiS8",
+    "lat": 6.1989651,
+    "lng": -75.5781736
+  },
+  {
+    "id_tienda": "T56",
+    "nombre": "FARMACIA PASTEUR EDIFICIO VASQUEZ",
+    "zona": "Medellin - Zona 2",
+    "url_ubicacion": "https://maps.app.goo.gl/XdojsSNtFDE8JcSi6",
+    "lat": 6.2454105,
+    "lng": -75.5715474
+  },
+  {
+    "id_tienda": "T29",
+    "nombre": "FARMACIA PASTEUR EL PASO",
+    "zona": "Medellin - Zona 2",
+    "url_ubicacion": "https://maps.app.goo.gl/93JKxsJJKH6xhizu8",
+    "lat": 6.2502319,
+    "lng": -75.5641263
+  },
+  {
+    "id_tienda": "T208",
+    "nombre": "FARMACIA PASTEUR EL SANTUARIO",
+    "zona": "ZONA 1-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/cCAHDz1wrtRj6k2q8",
+    "lat": 6.1349288,
+    "lng": -75.2692878
+  },
+  {
+    "id_tienda": "T219",
+    "nombre": "FARMACIA PASTEUR EL TESORO",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/VfTnPaZmejTyaSLt9",
+    "lat": 6.1972984,
+    "lng": -75.5582293
+  },
+  {
+    "id_tienda": "T131",
+    "nombre": "FARMACIA PASTEUR ESSO EL RETIRO",
+    "zona": "ZONA 5-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/cNZoxdciEpQbGjaf7",
+    "lat": 6.0946811,
+    "lng": -75.501592
+  },
+  {
+    "id_tienda": "T28",
+    "nombre": "FARMACIA PASTEUR ESTACION METRO",
+    "zona": "Medellin - Zona 2",
+    "url_ubicacion": "https://maps.app.goo.gl/UKn6XrMpwtEbKAaH8",
+    "lat": 6.2473914,
+    "lng": -75.5697794
+  },
+  {
+    "id_tienda": "T89",
+    "nombre": "FARMACIA PASTEUR ESTACION METRO NIQUIA",
+    "zona": "BELLO",
+    "url_ubicacion": "https://maps.app.goo.gl/swDDAh4GZCxGJRcXA",
+    "lat": 6.3375979,
+    "lng": -75.5443113
+  },
+  {
+    "id_tienda": "T46",
+    "nombre": "FARMACIA PASTEUR ESTRELLA",
+    "zona": "SUR SABANETA",
+    "url_ubicacion": "https://maps.app.goo.gl/iGoVhV88o5utuDdEA",
+    "lat": 6.1580472,
+    "lng": -75.6434038
+  },
+  {
+    "id_tienda": "T114",
+    "nombre": "FARMACIA PASTEUR EURO FLORIDA",
+    "zona": "ZONA 3-BELEN 1",
+    "url_ubicacion": "https://maps.app.goo.gl/bJ3FbfzB96dpWLht5",
+    "lat": 6.2710188,
+    "lng": -75.5777432
+  },
+  {
+    "id_tienda": "T83",
+    "nombre": "FARMACIA PASTEUR EURO LA FRONTERA",
+    "zona": "ZONA 1- ENVIGADO",
+    "url_ubicacion": "https://maps.app.goo.gl/3JqMAJ8vSE1gG9GAA",
+    "lat": 6.1832832,
+    "lng": -75.5795913
+  },
+  {
+    "id_tienda": "T154",
+    "nombre": "FARMACIA PASTEUR EURO LAURELES",
+    "zona": "ZONA 3-BELEN 1",
+    "url_ubicacion": "https://maps.app.goo.gl/PRUCecvsVGNjmC1Q8",
+    "lat": 6.2440441,
+    "lng": -75.5939656
+  },
+  {
+    "id_tienda": "T136",
+    "nombre": "FARMACIA PASTEUR EURO LOMA DE LOS BERNAL",
+    "zona": "ZONA 3-BELEN 2",
+    "url_ubicacion": "https://maps.app.goo.gl/Fe5Rc3kTLv29xqnK8",
+    "lat": 6.2157548,
+    "lng": -75.6055944
+  },
+  {
+    "id_tienda": "T47",
+    "nombre": "FARMACIA PASTEUR EURO MAYORISTA",
+    "zona": "ZONA 3-ITAGUI",
+    "url_ubicacion": "https://maps.app.goo.gl/MTzqAq9ddSvMT4XA8",
+    "lat": 6.188239,
+    "lng": -75.5891191
+  },
+  {
+    "id_tienda": "T141",
+    "nombre": "FARMACIA PASTEUR EURO PALMAS",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/jDP75N9vXC6RMUzT6",
+    "lat": 6.2203452,
+    "lng": -75.5668104
+  },
+  {
+    "id_tienda": "T137",
+    "nombre": "FARMACIA PASTEUR EURO SABANETA",
+    "zona": "SUR SABANETA",
+    "url_ubicacion": "https://maps.app.goo.gl/wL7R2jbwwDojvA2o9",
+    "lat": 6.1521509,
+    "lng": -75.6235208
+  },
+  {
+    "id_tienda": "T43",
+    "nombre": "FARMACIA PASTEUR FERROCARRIL",
+    "zona": "Medellin - Zona 2",
+    "url_ubicacion": "https://maps.app.goo.gl/z6XTuCrwWHV63qnj6",
+    "lat": 6.2514015,
+    "lng": -75.575582
+  },
+  {
+    "id_tienda": "T112",
+    "nombre": "FARMACIA PASTEUR FLORIDA",
+    "zona": "ZONA 3-BELEN 1",
+    "url_ubicacion": "https://maps.app.goo.gl/vdoHw51QqCsBizMk9",
+    "lat": 6.2708598,
+    "lng": -75.5769649
+  },
+  {
+    "id_tienda": "T44",
+    "nombre": "FARMACIA PASTEUR GIRARDOTA",
+    "zona": "Zona Norte Lejana",
+    "url_ubicacion": "https://maps.app.goo.gl/D46jBriPGXmqrYAQ6",
+    "lat": 6.3766892,
+    "lng": -75.4460668
+  },
+  {
+    "id_tienda": "T58",
+    "nombre": "FARMACIA PASTEUR GRAN VIA",
+    "zona": "ZONA 3-BELEN 2",
+    "url_ubicacion": "https://maps.app.goo.gl/VY3LbSUKUvJfvwNZA",
+    "lat": 6.2172532,
+    "lng": -75.5985867
+  },
+  {
+    "id_tienda": "T59",
+    "nombre": "FARMACIA PASTEUR GUADALCANAL",
+    "zona": "ZONA 1- ENVIGADO",
+    "url_ubicacion": "https://maps.app.goo.gl/q1t957CpCbrUGN8U8",
+    "lat": 6.1651529,
+    "lng": -75.5758342
+  },
+  {
+    "id_tienda": "T93",
+    "nombre": "FARMACIA PASTEUR GUARNE",
+    "zona": "ZONA 1-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/eYAvx96quc3ASZ1Z8",
+    "lat": 6.2794764,
+    "lng": -75.4431464
+  },
+  {
+    "id_tienda": "T126",
+    "nombre": "FARMACIA PASTEUR GUAYACAN",
+    "zona": "ZONA 1- ENVIGADO",
+    "url_ubicacion": "https://maps.app.goo.gl/NF2SdY2PzS4iwk2J7",
+    "lat": 6.182023,
+    "lng": -75.580812
+  },
+  {
+    "id_tienda": "T30",
+    "nombre": "FARMACIA PASTEUR ITAGUI",
+    "zona": "ZONA 3-ITAGUI",
+    "url_ubicacion": "https://maps.app.goo.gl/DPEUng4kgRpSju8ZA",
+    "lat": 6.1729233,
+    "lng": -75.6090621
+  },
+  {
+    "id_tienda": "T206",
+    "nombre": "FARMACIA PASTEUR JARDINES DE LLANOGRANDE",
+    "zona": "ZONA 4-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/ALLQcHcrd8otTQiv7",
+    "lat": 6.1544303,
+    "lng": -75.4359039
+  },
+  {
+    "id_tienda": "T78",
+    "nombre": "FARMACIA PASTEUR JUMBO LAS VEGAS",
+    "zona": "ZONA 1- ENVIGADO",
+    "url_ubicacion": "https://maps.app.goo.gl/YNd5EJAtAATQ8vx79",
+    "lat": 6.1869311,
+    "lng": -75.5827041
+  },
+  {
+    "id_tienda": "T236",
+    "nombre": "FARMACIA PASTEUR LA 49 CALDAS",
+    "zona": "CALDAS",
+    "url_ubicacion": "https://maps.app.goo.gl/gSzU24gpx4dsTjGb6",
+    "lat": 6.0902537,
+    "lng": -75.6352882
+  },
+  {
+    "id_tienda": "T110",
+    "nombre": "FARMACIA PASTEUR LA 52",
+    "zona": "ZONA 3-ITAGUI",
+    "url_ubicacion": "https://maps.app.goo.gl/HH1sXj9UBLMC6NjC9",
+    "lat": 6.1733212,
+    "lng": -75.610248
+  },
+  {
+    "id_tienda": "T72",
+    "nombre": "FARMACIA PASTEUR LA CEJA",
+    "zona": "ZONA 2-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/pfN1aUFhZRWEnzLbA",
+    "lat": 6.0296322,
+    "lng": -75.4314779
+  },
+  {
+    "id_tienda": "T185",
+    "nombre": "FARMACIA PASTEUR LA CENTRAL",
+    "zona": "Medellin - Zona 2",
+    "url_ubicacion": "https://maps.app.goo.gl/QpTTdwtXbPsno2Hp9",
+    "lat": 6.238727,
+    "lng": -75.5481951
+  },
+  {
+    "id_tienda": "T85",
+    "nombre": "FARMACIA PASTEUR LA PLAYA",
+    "zona": "Medellin - Zona 2",
+    "url_ubicacion": "https://maps.app.goo.gl/FLmp7QC8ThBQB5FV7",
+    "lat": 6.248763,
+    "lng": -75.5639443
+  },
+  {
+    "id_tienda": "T200",
+    "nombre": "FARMACIA PASTEUR LISBOA",
+    "zona": "ZONA 3-ITAGUI",
+    "url_ubicacion": "https://maps.app.goo.gl/83pi2f36BUfFxLTW9",
+    "lat": 6.1610846,
+    "lng": -75.6307753
+  },
+  {
+    "id_tienda": "T51",
+    "nombre": "FARMACIA PASTEUR LLANO GRANDE",
+    "zona": "ZONA 4-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/bNEMzc2dPx1xv1NG6",
+    "lat": 6.1246944,
+    "lng": -75.4228333
+  },
+  {
+    "id_tienda": "T48",
+    "nombre": "FARMACIA PASTEUR LOS MOLINOS",
+    "zona": "ZONA 3-BELEN 2",
+    "url_ubicacion": "https://maps.app.goo.gl/zzYoidouZY3zY7cP9",
+    "lat": 6.232553,
+    "lng": -75.604161
+  },
+  {
+    "id_tienda": "T127",
+    "nombre": "FARMACIA PASTEUR MADERA",
+    "zona": "BELLO",
+    "url_ubicacion": "https://maps.app.goo.gl/zf38gmhyk3oo8ynt7",
+    "lat": 6.3154305,
+    "lng": -75.5567181
+  },
+  {
+    "id_tienda": "T88",
+    "nombre": "FARMACIA PASTEUR MANRIQUE",
+    "zona": "Medellin - Zona 2",
+    "url_ubicacion": "https://maps.app.goo.gl/38wDHYQsHh6L5uWw9",
+    "lat": 6.267747,
+    "lng": -75.5548915
+  },
+  {
+    "id_tienda": "T34",
+    "nombre": "FARMACIA PASTEUR MAYORCA",
+    "zona": "SUR SABANETA",
+    "url_ubicacion": "https://maps.app.goo.gl/U2EhzmmXD6KRZ7SD9",
+    "lat": 6.1604825,
+    "lng": -75.6051499
+  },
+  {
+    "id_tienda": "T132",
+    "nombre": "FARMACIA PASTEUR MEDICAL CENTER",
+    "zona": "ZONA 4-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/XniGnZGfhCkJv3VF6",
+    "lat": 6.1544303,
+    "lng": -75.4359039
+  },
+  {
+    "id_tienda": "T151",
+    "nombre": "FARMACIA PASTEUR MEGA PLAZA",
+    "zona": "SUR SABANETA",
+    "url_ubicacion": "https://maps.app.goo.gl/CKqeLEUgKmPox7KZ6",
+    "lat": 6.1604825,
+    "lng": -75.6051499
+  },
+  {
+    "id_tienda": "T145",
+    "nombre": "FARMACIA PASTEUR MILLA DE ORO",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/Wq61txubbX1UEBTe9",
+    "lat": 6.1996111,
+    "lng": -75.5721944
+  },
+  {
+    "id_tienda": "T359",
+    "nombre": "FARMACIA PASTEUR MONTEFARO",
+    "zona": "ZONA 3-ITAGUI",
+    "url_ubicacion": "https://maps.app.goo.gl/zCABM4oT7gUinML19",
+    "lat": 6.1857736,
+    "lng": -75.6025858
+  },
+  {
+    "id_tienda": "T133",
+    "nombre": "FARMACIA PASTEUR OPEN MALL",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/zBNFJPG397XQsXH5A",
+    "lat": 6.1969153,
+    "lng": -75.5846474
+  },
+  {
+    "id_tienda": "T144",
+    "nombre": "FARMACIA PASTEUR PALMA GRANDE",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/iHAaCFzAwCPj8cNr9",
+    "lat": 6.2203452,
+    "lng": -75.5668094
+  },
+  {
+    "id_tienda": "T150",
+    "nombre": "FARMACIA PASTEUR PARQUE ENVIGADO",
+    "zona": "ZONA 1- ENVIGADO",
+    "url_ubicacion": "https://maps.app.goo.gl/JUMtEyjeoeU69B9U7",
+    "lat": 6.1696446,
+    "lng": -75.5873064
+  },
+  {
+    "id_tienda": "T41",
+    "nombre": "FARMACIA PASTEUR PARQUE SABANETA",
+    "zona": "SUR SABANETA",
+    "url_ubicacion": "https://maps.app.goo.gl/uxUk6RtuKfPDq4rN9",
+    "lat": 6.1518396,
+    "lng": -75.6157234
+  },
+  {
+    "id_tienda": "T199",
+    "nombre": "FARMACIA PASTEUR PIAZZA BELLA",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/NWdGvR14PqCCueF9A",
+    "lat": 6.2032927,
+    "lng": -75.5614855
+  },
+  {
+    "id_tienda": "T135",
+    "nombre": "FARMACIA PASTEUR PILARICA BLUE",
+    "zona": "ZONA 3-BELEN 1",
+    "url_ubicacion": "https://maps.app.goo.gl/ux2Vqj2bNY4a8xmk7",
+    "lat": 6.2739032,
+    "lng": -75.5823892
+  },
+  {
+    "id_tienda": "T19",
+    "nombre": "FARMACIA PASTEUR PLATINUM",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/VvJ3UFLURv1XPjzC9",
+    "lat": 6.1957519,
+    "lng": -75.5587065
+  },
+  {
+    "id_tienda": "T187",
+    "nombre": "FARMACIA PASTEUR PUERTA DEL NORTE",
+    "zona": "BELLO",
+    "url_ubicacion": "https://maps.app.goo.gl/27Zy48BAxc1jCtbq7",
+    "lat": 6.3394756,
+    "lng": -75.5423804
+  },
+  {
+    "id_tienda": "T134",
+    "nombre": "FARMACIA PASTEUR SALUD Y SERVICIOS",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/FoQrYMoRj6zmwtHX8",
+    "lat": 6.2224029,
+    "lng": -75.5748969
+  },
+  {
+    "id_tienda": "T204",
+    "nombre": "FARMACIA PASTEUR SAN ANTONIO DE PEREIRA",
+    "zona": "ZONA 3-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/cXGdXwS7ttfjBc8a9",
+    "lat": 6.13034,
+    "lng": -75.3799654
+  },
+  {
+    "id_tienda": "T92",
+    "nombre": "FARMACIA PASTEUR SAN ANTONIO DE PRADO",
+    "zona": "SAN ANTONIO DE PRADO",
+    "url_ubicacion": "https://maps.app.goo.gl/1bbQm22RuQu16Xj58",
+    "lat": 6.1841035,
+    "lng": -75.6560959
+  },
+  {
+    "id_tienda": "T68",
+    "nombre": "FARMACIA PASTEUR SAN CRISTOBAL",
+    "zona": "ZONA 3-BELEN 1",
+    "url_ubicacion": "https://maps.app.goo.gl/6EYZBTHBzGKS3cwdA",
+    "lat": 6.2792664,
+    "lng": -75.6339289
+  },
+  {
+    "id_tienda": "T82",
+    "nombre": "FARMACIA PASTEUR SAN DIEGO",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/KwGFGLSewa3sQfSs7",
+    "lat": 6.2362282,
+    "lng": -75.5694731
+  },
+  {
+    "id_tienda": "T108",
+    "nombre": "FARMACIA PASTEUR SAN FRANCISCO",
+    "zona": "ZONA 3-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/9ZrGJrwvdfxTCcSd8",
+    "lat": 6.1537019,
+    "lng": -75.3723984
+  },
+  {
+    "id_tienda": "T102",
+    "nombre": "FARMACIA PASTEUR SAN JAVIER",
+    "zona": "ZONA 3-BELEN 1",
+    "url_ubicacion": "https://maps.app.goo.gl/ampGwCahCpBQpcnYA",
+    "lat": 6.2575952,
+    "lng": -75.6141214
+  },
+  {
+    "id_tienda": "T172",
+    "nombre": "FARMACIA PASTEUR SAN JERONIMO",
+    "zona": "OCCIDENTE ANTIOQUIA - ZONA 1",
+    "url_ubicacion": "https://maps.app.goo.gl/UDHQ4Xegd1Bwii4n6",
+    "lat": 6.4450574,
+    "lng": -75.7305166
+  },
+  {
+    "id_tienda": "T98",
+    "nombre": "FARMACIA PASTEUR SAN LUCAS",
+    "zona": "ZONA 1- ENVIGADO",
+    "url_ubicacion": "https://maps.app.goo.gl/JG7AULxHKX3vkAPe7",
+    "lat": 6.181018,
+    "lng": -75.56867
+  },
+  {
+    "id_tienda": "T207",
+    "nombre": "FARMACIA PASTEUR SAN MARCOS",
+    "zona": "ZONA 1- ENVIGADO",
+    "url_ubicacion": "https://maps.app.goo.gl/p6d9ovkuCqaUBK4J9",
+    "lat": 6.1763755,
+    "lng": -75.585543
+  },
+  {
+    "id_tienda": "T121",
+    "nombre": "FARMACIA PASTEUR SANTA MARIA",
+    "zona": "ZONA 3-ITAGUI",
+    "url_ubicacion": "https://maps.app.goo.gl/tsSukqXNb2sX3dpYA",
+    "lat": 6.1886037,
+    "lng": -75.5958866
+  },
+  {
+    "id_tienda": "T175",
+    "nombre": "FARMACIA PASTEUR SANTANA",
+    "zona": "ZONA 3-BELEN 1",
+    "url_ubicacion": "https://maps.app.goo.gl/uxr8uqhqt6d9Lumy6",
+    "lat": 6.2684243,
+    "lng": -75.6043316
+  },
+  {
+    "id_tienda": "T61",
+    "nombre": "FARMACIA PASTEUR SAVANNA",
+    "zona": "ZONA 3-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/R8H4M4Kkgvj3TJ297",
+    "lat": 6.147012,
+    "lng": -75.379514
+  },
+  {
+    "id_tienda": "T52",
+    "nombre": "FARMACIA PASTEUR SIMON BOLIVAR",
+    "zona": "ZONA 3-BELEN 2",
+    "url_ubicacion": "https://maps.app.goo.gl/ayG3enXuoGh4qEwF7",
+    "lat": 6.2444639,
+    "lng": -75.6075503
+  },
+  {
+    "id_tienda": "T119",
+    "nombre": "FARMACIA PASTEUR SURAMERICANA",
+    "zona": "ZONA 3-BELEN 1",
+    "url_ubicacion": "https://maps.app.goo.gl/ZpesJdrQCiMmuv4Q8",
+    "lat": 6.2549749,
+    "lng": -75.5797258
+  },
+  {
+    "id_tienda": "T111",
+    "nombre": "FARMACIA PASTEUR TERMINAL DEL NORTE",
+    "zona": "ZONA 3-BELEN 1",
+    "url_ubicacion": "https://maps.app.goo.gl/y7z5TN2cJqkymR23A",
+    "lat": 6.2770796,
+    "lng": -75.5708554
+  },
+  {
+    "id_tienda": "T128",
+    "nombre": "FARMACIA PASTEUR TERMINAL DEL SUR",
+    "zona": "ZONA 3-BELEN 2",
+    "url_ubicacion": "https://maps.app.goo.gl/w2PiKbxipZCVXSTW6",
+    "lat": 6.216319,
+    "lng": -75.586877
+  },
+  {
+    "id_tienda": "T86",
+    "nombre": "FARMACIA PASTEUR TORRE LA VEGA",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/TDLPMshUgAz1q5Ek7",
+    "lat": 6.200734,
+    "lng": -75.5730233
+  },
+  {
+    "id_tienda": "T146",
+    "nombre": "FARMACIA PASTEUR TRANVIA",
+    "zona": "Medellin - Zona 2",
+    "url_ubicacion": "https://maps.app.goo.gl/rodWbHQF1qXyDVEe6",
+    "lat": 6.2452948,
+    "lng": -75.561333
+  },
+  {
+    "id_tienda": "T139",
+    "nombre": "FARMACIA PASTEUR VEGAS PLAZA",
+    "zona": "SUR SABANETA",
+    "url_ubicacion": "https://maps.app.goo.gl/FaRFVwJyU2siDRxd6",
+    "lat": 6.1521509,
+    "lng": -75.6235208
+  },
+  {
+    "id_tienda": "T31",
+    "nombre": "FARMACIA PASTEUR VILLA DEL ABURRA",
+    "zona": "ZONA 3-BELEN 2",
+    "url_ubicacion": "https://maps.app.goo.gl/d8iEfguN2dxnCq7N9",
+    "lat": 6.2351692,
+    "lng": -75.6024036
+  },
+  {
+    "id_tienda": "T118",
+    "nombre": "FARMACIA PASTEUR VILLA HERMOSA",
+    "zona": "Medellin - Zona 2",
+    "url_ubicacion": "https://maps.app.goo.gl/wKuiwzusWXfg4Gjq8",
+    "lat": 6.2589373,
+    "lng": -75.5524067
+  },
+  {
+    "id_tienda": "T159",
+    "nombre": "FARMACIA PASTEUR VIVA LA CEJA",
+    "zona": "ZONA 2-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/G4Gop5yqfY59biQ89",
+    "lat": 6.0351152,
+    "lng": -75.4210479
+  },
+  {
+    "id_tienda": "T155",
+    "nombre": "FARMACIA PASTEUR VIVA PALMAS",
+    "zona": "ALTO DE PALMAS",
+    "url_ubicacion": "https://maps.app.goo.gl/q6kqT1PVmqwzHgA26",
+    "lat": 6.1525954,
+    "lng": -75.540631
+  },
+  {
+    "id_tienda": "T178",
+    "nombre": "FARMACIA PASTEUR ZONA 2",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/z9KeuFcUvkdL85iS8",
+    "lat": 6.198655,
+    "lng": -75.5659821
+  },
+  {
+    "id_tienda": "T273",
+    "nombre": "LA GARANTIA DROGUERIA SANTAFE DE ANTIOQUA",
+    "zona": "OCCIDENTE ANTIOQUIA - ZONA 1",
+    "url_ubicacion": "https://maps.app.goo.gl/niYy39iXjnmsZYqdA",
+    "lat": 6.5560356,
+    "lng": -75.827971
+  },
+  {
+    "id_tienda": "T91",
+    "nombre": "LA GARANTIA SAN NICOLAS",
+    "zona": "ZONA 3-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/Ba5Q4HJw1Nh9jYq69",
+    "lat": 6.147012,
+    "lng": -75.379514
+  },
+  {
+    "id_tienda": "T226",
+    "nombre": "MARKET PASTEUR AMSTERDAM",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/cvEqSQcyJ9CpKkDt8",
+    "lat": 6.2021025,
+    "lng": -75.5563658
+  },
+  {
+    "id_tienda": "T400",
+    "nombre": "MARKET PASTEUR AVES MARIA",
+    "zona": "SUR SABANETA",
+    "url_ubicacion": "https://maps.app.goo.gl/SVQrqLCzLE7QQH7y6",
+    "lat": 6.1488529,
+    "lng": -75.6174219
+  },
+  {
+    "id_tienda": "T275",
+    "nombre": "MARKET PASTEUR BELEN LA PALMA",
+    "zona": "ZONA 3-BELEN 2",
+    "url_ubicacion": "https://maps.app.goo.gl/vZ5yciysUd5jAXw39",
+    "lat": 6.2296934,
+    "lng": -75.6017682
+  },
+  {
+    "id_tienda": "T375",
+    "nombre": "MARKET PASTEUR CITY PLAZA",
+    "zona": "ZONA 1- ENVIGADO",
+    "url_ubicacion": "https://maps.app.goo.gl/oX1vLW1qmQ1gvSyZA",
+    "lat": 6.1633299,
+    "lng": -75.5731259
+  },
+  {
+    "id_tienda": "T312",
+    "nombre": "MARKET PASTEUR CLINICA LLANO GRANDE",
+    "zona": "ZONA 3-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/cDg6scXgiCu1uy1s9",
+    "lat": 6.1320813,
+    "lng": -75.3960733
+  },
+  {
+    "id_tienda": "T313",
+    "nombre": "MARKET PASTEUR DON DIEGO",
+    "zona": "ZONA 5-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/TTbsCiyawBWU3fjQ6",
+    "lat": 6.0947584,
+    "lng": -75.4756963
+  },
+  {
+    "id_tienda": "T320",
+    "nombre": "MARKET PASTEUR ENTRE HOJAS",
+    "zona": "ZONA 3-ITAGUI",
+    "url_ubicacion": "https://maps.app.goo.gl/ukuQnvU7VwM5qQv56",
+    "lat": 6.165223,
+    "lng": -75.6344225
+  },
+  {
+    "id_tienda": "T355",
+    "nombre": "MARKET PASTEUR FLORIDA",
+    "zona": "ZONA 3-BELEN 1",
+    "url_ubicacion": "https://maps.app.goo.gl/C9RxWyRBBJMZVR5z7",
+    "lat": 6.2735705,
+    "lng": -75.5762913
+  },
+  {
+    "id_tienda": "T70",
+    "nombre": "MARKET PASTEUR FRONTERA",
+    "zona": "ZONA 1- ENVIGADO",
+    "url_ubicacion": "https://maps.app.goo.gl/sYYFy4V5RNUxaNwV6",
+    "lat": 6.1839475,
+    "lng": -75.5789986
+  },
+  {
+    "id_tienda": "T378",
+    "nombre": "MARKET PASTEUR GUAYACAN DE AVIGNON",
+    "zona": "ZONA 1- ENVIGADO",
+    "url_ubicacion": "https://maps.app.goo.gl/5TeqTnXFBvNAMBCe6",
+    "lat": 6.179796,
+    "lng": -75.563654
+  },
+  {
+    "id_tienda": "T285",
+    "nombre": "MARKET PASTEUR LAURELES",
+    "zona": "ZONA 3-BELEN 1",
+    "url_ubicacion": "https://maps.app.goo.gl/EM3aFcdQAUMKtGfm7",
+    "lat": 6.242514,
+    "lng": -75.595969
+  },
+  {
+    "id_tienda": "T242",
+    "nombre": "MARKET PASTEUR LEMONT",
+    "zona": "ALTO DE PALMAS",
+    "url_ubicacion": "https://maps.app.goo.gl/D3Lysd6YB3AjiXa66",
+    "lat": 6.153041,
+    "lng": -75.537874
+  },
+  {
+    "id_tienda": "T291",
+    "nombre": "MARKET PASTEUR MALL ZONA SUR SABANETA",
+    "zona": "SUR SABANETA",
+    "url_ubicacion": "https://maps.app.goo.gl/uUKJzyHFfjvXVyBH7",
+    "lat": 6.1454242,
+    "lng": -75.6194748
+  },
+  {
+    "id_tienda": "T358",
+    "nombre": "MARKET PASTEUR MANILA",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/JcEw3448wxj1aPHK9",
+    "lat": 6.2143949,
+    "lng": -75.5732728
+  },
+  {
+    "id_tienda": "T325",
+    "nombre": "MARKET PASTEUR PROVENZA",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/HV3qrxT5d3fQUNZS8",
+    "lat": 6.2086527,
+    "lng": -75.5658235
+  },
+  {
+    "id_tienda": "T214",
+    "nombre": "MARKET PASTEUR SAN ANTONIO DE PRADO",
+    "zona": "SAN ANTONIO DE PRADO",
+    "url_ubicacion": "https://maps.app.goo.gl/mjyqaqPju7zh3yUG8",
+    "lat": 6.1759014,
+    "lng": -75.6479621
+  },
+  {
+    "id_tienda": "T318",
+    "nombre": "MARKET PASTEUR SAN GERMAN",
+    "zona": "ZONA 3-BELEN 1",
+    "url_ubicacion": "https://maps.app.goo.gl/9C9pw5sQwQso7QZdA",
+    "lat": 6.270467,
+    "lng": -75.5909027
+  },
+  {
+    "id_tienda": "T341",
+    "nombre": "MARKET PASTEUR SAN NICOLAS",
+    "zona": "ZONA 3-ORIENTE ANTIOQUEÑO",
+    "url_ubicacion": "https://maps.app.goo.gl/yCfj62HigvxDao3q9",
+    "lat": 6.1472055,
+    "lng": -75.3780194
+  },
+  {
+    "id_tienda": "T79",
+    "nombre": "PASTEUR COPACABANA",
+    "zona": "Zona Norte Lejana",
+    "url_ubicacion": "https://maps.app.goo.gl/HeFgCeceUzrpxaPbA",
+    "lat": 6.3458691,
+    "lng": -75.5086685
+  },
+  {
+    "id_tienda": "T191",
+    "nombre": "PASTEUR MARKET PUNTO CLAVE",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/mWMr7oKcbtLHS9Hi6",
+    "lat": 6.2300962,
+    "lng": -75.5730189
+  },
+  {
+    "id_tienda": "T383",
+    "nombre": "SELF BY PASTEUR",
+    "zona": "ZONA 1- POBLADO",
+    "url_ubicacion": "https://maps.app.goo.gl/85xqAV5d818daJ8z6",
+    "lat": 6.1975252,
+    "lng": -75.5593077
+  }
+]
