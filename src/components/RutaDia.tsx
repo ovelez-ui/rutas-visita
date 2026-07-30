@@ -52,76 +52,72 @@ function ParadaItem({
     <div
       ref={setNodeRef}
       style={style}
-      className={`flex items-center gap-2.5 rounded-2xl border p-3 transition ${
+      className={`rounded-2xl border p-3 transition ${
         isDragging ? 'border-brand-300 shadow-lg' : 'border-slate-200 dark:border-slate-800'
       } ${visitada ? 'bg-emerald-50/60 dark:bg-emerald-500/5' : 'bg-white dark:bg-slate-900'}`}
     >
-      {/* Handle de arrastre */}
-      <button
-        {...attributes}
-        {...listeners}
-        className="grid h-8 w-6 shrink-0 cursor-grab touch-none place-items-center text-slate-300 active:cursor-grabbing dark:text-slate-600"
-        aria-label="Arrastrar para reordenar"
-      >
-        <IconDrag className="h-5 w-5" />
-      </button>
+      {/* Fila superior: asa + número + nombre (a todo el ancho) */}
+      <div className="flex items-start gap-2.5">
+        <button
+          {...attributes}
+          {...listeners}
+          className="mt-1 grid h-8 w-5 shrink-0 cursor-grab touch-none place-items-center text-slate-300 active:cursor-grabbing dark:text-slate-600"
+          aria-label="Arrastrar para reordenar"
+        >
+          <IconDrag className="h-5 w-5" />
+        </button>
 
-      {/* Número de orden */}
-      <div
-        className={`grid h-9 w-9 shrink-0 place-items-center rounded-full text-sm font-bold ${
-          visitada
-            ? 'bg-emerald-500 text-white'
-            : 'bg-brand-100 text-brand-700 dark:bg-brand-500/15 dark:text-brand-300'
-        }`}
-      >
-        {visitada ? <IconCheck className="h-5 w-5" /> : parada.orden}
-      </div>
-
-      {/* Info */}
-      <div className="min-w-0 flex-1">
-        <div className="flex items-center gap-1.5">
-          <span className="rounded bg-slate-100 px-1.5 py-0.5 text-[10px] font-semibold text-slate-500 dark:bg-slate-800 dark:text-slate-400">
-            {parada.id_tienda}
-          </span>
-          {tienda && tienda.lat == null && (
-            <span className="text-[10px] font-medium text-amber-600 dark:text-amber-400">sin ubicación</span>
-          )}
-        </div>
         <div
-          className={`mt-0.5 truncate text-sm font-semibold ${
-            visitada ? 'text-slate-400 line-through dark:text-slate-500' : 'text-slate-900 dark:text-white'
+          className={`mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full text-sm font-bold ${
+            visitada
+              ? 'bg-emerald-500 text-white'
+              : 'bg-brand-100 text-brand-700 dark:bg-brand-500/15 dark:text-brand-300'
           }`}
         >
-          {tienda?.nombre ?? parada.id_tienda}
+          {visitada ? <IconCheck className="h-5 w-5" /> : parada.orden}
         </div>
-        {tienda && (
-          <div className="mt-1">
-            <ZonaBadge zona={tienda.zona} size="xs" />
+
+        <div className="min-w-0 flex-1">
+          <div
+            className={`text-[15px] font-semibold leading-snug break-words ${
+              visitada ? 'text-slate-400 line-through dark:text-slate-500' : 'text-slate-900 dark:text-white'
+            }`}
+          >
+            {tienda?.nombre ?? parada.id_tienda}
           </div>
-        )}
+          <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
+            <span className="rounded bg-slate-100 px-1.5 py-0.5 text-[10px] font-semibold text-slate-500 dark:bg-slate-800 dark:text-slate-400">
+              {parada.id_tienda}
+            </span>
+            {tienda && <ZonaBadge zona={tienda.zona} size="xs" />}
+            {tienda && tienda.lat == null && (
+              <span className="text-[10px] font-medium text-amber-600 dark:text-amber-400">sin ubicación</span>
+            )}
+          </div>
+        </div>
       </div>
 
-      {/* Acciones */}
-      <div className="flex shrink-0 items-center gap-1.5">
+      {/* Fila inferior: acciones grandes */}
+      <div className="mt-3 flex gap-2">
         <a
           href={tienda?.url_ubicacion}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-1 rounded-xl bg-brand-600 px-3 py-2 text-xs font-semibold text-white transition hover:bg-brand-700"
+          className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-brand-600 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-700"
         >
-          Ir <IconGo className="h-3.5 w-3.5" />
+          Ir a la tienda <IconGo className="h-4 w-4" />
         </a>
         <button
           onClick={() => toggleVisitada(dia, parada.id_tienda)}
-          className={`grid h-9 w-9 place-items-center rounded-xl border transition ${
+          className={`inline-flex items-center justify-center gap-1.5 rounded-xl border px-3.5 py-2.5 text-sm font-semibold transition ${
             visitada
               ? 'border-emerald-300 bg-emerald-500 text-white dark:border-emerald-500/40'
-              : 'border-slate-200 text-slate-300 hover:border-emerald-300 hover:text-emerald-500 dark:border-slate-700'
+              : 'border-slate-200 text-slate-500 hover:border-emerald-300 hover:text-emerald-600 dark:border-slate-700 dark:text-slate-400'
           }`}
           aria-label={visitada ? 'Marcar como pendiente' : 'Marcar como visitada'}
-          title={visitada ? 'Visitada' : 'Marcar visitada'}
         >
           <IconCheck className="h-5 w-5" />
+          <span>{visitada ? 'Visitada' : 'Visitar'}</span>
         </button>
       </div>
     </div>
