@@ -28,6 +28,15 @@ interface AppState {
   toggleVisitada: (dia: number, idTienda: string) => void;
   reordenarDia: (dia: number, idsEnOrden: string[]) => void;
 
+  // Ruta especial (recorrido manual)
+  especial: string[]; // ids en orden
+  especialVisitadas: string[]; // ids marcados como visitados
+  toggleEspecialTienda: (id: string) => void; // agrega o quita del recorrido
+  reordenarEspecial: (idsEnOrden: string[]) => void;
+  quitarEspecial: (id: string) => void;
+  toggleVisitadaEspecial: (id: string) => void;
+  limpiarEspecial: () => void;
+
   // UI
   toggleTema: () => void;
   resetSemilla: () => void;
@@ -107,6 +116,32 @@ export const useStore = create<AppState>()(
           return { plan: { ...s.plan, dias } };
         }),
 
+      // ── Ruta especial ──
+      especial: [],
+      especialVisitadas: [],
+      toggleEspecialTienda: (id) =>
+        set((s) =>
+          s.especial.includes(id)
+            ? {
+                especial: s.especial.filter((x) => x !== id),
+                especialVisitadas: s.especialVisitadas.filter((x) => x !== id),
+              }
+            : { especial: [...s.especial, id] },
+        ),
+      reordenarEspecial: (idsEnOrden) => set({ especial: idsEnOrden }),
+      quitarEspecial: (id) =>
+        set((s) => ({
+          especial: s.especial.filter((x) => x !== id),
+          especialVisitadas: s.especialVisitadas.filter((x) => x !== id),
+        })),
+      toggleVisitadaEspecial: (id) =>
+        set((s) => ({
+          especialVisitadas: s.especialVisitadas.includes(id)
+            ? s.especialVisitadas.filter((x) => x !== id)
+            : [...s.especialVisitadas, id],
+        })),
+      limpiarEspecial: () => set({ especial: [], especialVisitadas: [] }),
+
       toggleTema: () => set((s) => ({ tema: s.tema === 'claro' ? 'oscuro' : 'claro' })),
       resetSemilla: () => set({ tiendas: seedTiendas, plan: null }),
       toast: (msg, tipo = 'ok') => {
@@ -121,7 +156,14 @@ export const useStore = create<AppState>()(
     {
       name: 'rutas-visita-v1',
       // No persistimos toasts
-      partialize: (s) => ({ tiendas: s.tiendas, plan: s.plan, tema: s.tema, opciones: s.opciones }),
+      partialize: (s) => ({
+        tiendas: s.tiendas,
+        plan: s.plan,
+        tema: s.tema,
+        opciones: s.opciones,
+        especial: s.especial,
+        especialVisitadas: s.especialVisitadas,
+      }),
     },
   ),
 );

@@ -1,13 +1,14 @@
 import { useEffect } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { useStore } from '../store/useStore';
-import { IconConfig, IconDashboard, IconMoon, IconRutas, IconSun, IconTiendas } from './icons';
+import { IconConfig, IconDashboard, IconMoon, IconRutas, IconSpark, IconSun, IconTiendas } from './icons';
 import { Toaster } from './Toaster';
 
 const NAV = [
   { to: '/', label: 'Inicio', Icon: IconDashboard, end: true },
   { to: '/tiendas', label: 'Tiendas', Icon: IconTiendas },
   { to: '/rutas', label: 'Rutas', Icon: IconRutas },
+  { to: '/especial', label: 'Especial', Icon: IconSpark },
   { to: '/config', label: 'Ajustes', Icon: IconConfig },
 ];
 
@@ -91,7 +92,7 @@ export default function Layout() {
       </div>
 
       {/* Navegación inferior móvil */}
-      <nav className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-4 border-t border-slate-200 bg-white/95 pb-[env(safe-area-inset-bottom)] backdrop-blur md:hidden dark:border-slate-800 dark:bg-slate-900/95">
+      <nav className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-5 border-t border-slate-200 bg-white/95 pb-[env(safe-area-inset-bottom)] backdrop-blur md:hidden dark:border-slate-800 dark:bg-slate-900/95">
         {NAV.map(({ to, label, Icon, end }) => (
           <NavLink
             key={to}
