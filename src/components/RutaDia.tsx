@@ -24,6 +24,7 @@ import { IconCheck, IconDrag, IconGo, IconMap, IconRefresh, IconSpark } from './
 import { urlRutaCompleta } from '../lib/maps';
 import { ordenarPorProximidad, kmDia } from '../lib/rutas';
 import { mensajeDelDia } from '../lib/motivacion';
+import { RegistroVisita } from './RegistroVisita';
 
 const MapaDia = lazy(() => import('./MapaDia'));
 
@@ -95,6 +96,9 @@ function ParadaItem({
               <span className="text-[10px] font-medium text-amber-600 dark:text-amber-400">sin ubicación</span>
             )}
           </div>
+        </div>
+        <div className="shrink-0">
+          <RegistroVisita idTienda={parada.id_tienda} nombre={tienda?.nombre ?? parada.id_tienda} />
         </div>
       </div>
 

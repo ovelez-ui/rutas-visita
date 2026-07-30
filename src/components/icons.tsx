@@ -119,6 +119,19 @@ export const IconRefresh = (p: P) => (
   </svg>
 );
 
+export const IconCamera = (p: P) => (
+  <svg {...base} {...p}>
+    <path d="M4 8a2 2 0 0 1 2-2h1.5l1-1.5h5l1 1.5H18a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8z" />
+    <circle cx="12" cy="12.5" r="3.2" />
+  </svg>
+);
+
+export const IconTrash = (p: P) => (
+  <svg {...base} {...p}>
+    <path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M6 7l1 13a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1l1-13" />
+  </svg>
+);
+
 export const IconSpark = (p: P) => (
   <svg {...base} {...p}>
     <path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z" />

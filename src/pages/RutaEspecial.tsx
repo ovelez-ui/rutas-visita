@@ -21,6 +21,7 @@ import { useStore } from '../store/useStore';
 import { Card, PageTitle, ZonaBadge } from '../components/ui';
 import { Modal } from '../components/Modal';
 import { IconCheck, IconDrag, IconGo, IconMap, IconPlus, IconRefresh } from '../components/icons';
+import { RegistroVisita } from '../components/RegistroVisita';
 import { urlRutaCompleta } from '../lib/maps';
 import { ordenarPorProximidad } from '../lib/rutas';
 import { longitudRuta } from '../lib/geo';
@@ -79,6 +80,9 @@ function ItemEspecial({ tienda, orden }: { tienda: Tienda; orden: number }) {
             {tienda.lat == null && (
               <span className="text-[10px] font-medium text-amber-600 dark:text-amber-400">sin ubicación</span>
             )}
+          </div>
+          <div className="mt-2">
+            <RegistroVisita idTienda={tienda.id_tienda} nombre={tienda.nombre} />
           </div>
         </div>
         <button

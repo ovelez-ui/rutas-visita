@@ -28,6 +28,10 @@ interface AppState {
   toggleVisitada: (dia: number, idTienda: string) => void;
   reordenarDia: (dia: number, idsEnOrden: string[]) => void;
 
+  // Registros de visita (resumen para las tarjetas; el detalle vive en IndexedDB)
+  registros: Record<string, { fotos: number; obs: boolean }>;
+  setRegistro: (id: string, r: { fotos: number; obs: boolean }) => void;
+
   // Ruta especial (recorrido manual)
   especial: string[]; // ids en orden
   especialVisitadas: string[]; // ids marcados como visitados
@@ -116,6 +120,16 @@ export const useStore = create<AppState>()(
           return { plan: { ...s.plan, dias } };
         }),
 
+      // ── Registros de visita ──
+      registros: {},
+      setRegistro: (id, r) =>
+        set((s) => {
+          const registros = { ...s.registros };
+          if (r.fotos === 0 && !r.obs) delete registros[id];
+          else registros[id] = r;
+          return { registros };
+        }),
+
       // ── Ruta especial ──
       especial: [],
       especialVisitadas: [],
@@ -163,6 +177,7 @@ export const useStore = create<AppState>()(
         opciones: s.opciones,
         especial: s.especial,
         especialVisitadas: s.especialVisitadas,
+        registros: s.registros,
       }),
     },
   ),
