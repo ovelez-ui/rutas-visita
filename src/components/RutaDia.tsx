@@ -178,16 +178,11 @@ export function RutaDia({ dia }: { dia: DiaRuta }) {
   return (
     <div>
       {/* Mensaje motivacional para la Coordinadora Dermo */}
-      <div className="mb-4 flex items-start gap-3 rounded-2xl bg-gradient-to-br from-violet-500 to-rose-500 p-4 text-white shadow-sm">
-        <div className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white/20">
+      <div className="mb-4 flex items-center gap-3 rounded-2xl bg-gradient-to-br from-violet-500 to-rose-500 p-4 text-white shadow-sm">
+        <div className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white/20">
           <IconSpark className="h-5 w-5" />
         </div>
-        <div>
-          <div className="text-[11px] font-semibold uppercase tracking-wide text-white/80">
-            Para ti, Coordinadora Dermo
-          </div>
-          <p className="mt-0.5 text-sm font-medium leading-snug">{mensajeDelDia(dia.dia)}</p>
-        </div>
+        <p className="text-sm font-medium leading-snug">{mensajeDelDia(dia.dia)}</p>
       </div>
 
       {/* Cabecera del día */}
