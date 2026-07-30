@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useStore } from '../store/useStore';
 import { Card, PageTitle, ZonaBadge } from '../components/ui';
-import { IconRefresh } from '../components/icons';
+import { IconMail, IconRefresh } from '../components/icons';
 import { listarVisitas, type VisitaFila } from '../lib/visitas';
+import { abrirCorreo, correoReporte } from '../lib/correo';
 
 function Stat({ label, value }: { label: string; value: string | number }) {
   return (
@@ -52,6 +53,16 @@ export default function Reporte() {
                 className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 px-3 py-2 text-sm font-medium transition hover:bg-slate-50 dark:border-slate-700 dark:hover:bg-slate-800"
               >
                 <IconRefresh className="h-4 w-4" /> Actualizar
+              </button>
+              <button
+                onClick={() => {
+                  const { subject, body } = correoReporte(filas, mapaTiendas);
+                  abrirCorreo(subject, body);
+                }}
+                disabled={filas.length === 0}
+                className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 px-3 py-2 text-sm font-medium transition hover:bg-slate-50 disabled:opacity-50 dark:border-slate-700 dark:hover:bg-slate-800"
+              >
+                <IconMail className="h-4 w-4" /> Enviar por correo
               </button>
               <button
                 onClick={() => window.print()}

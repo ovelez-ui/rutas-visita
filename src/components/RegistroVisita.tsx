@@ -1,12 +1,13 @@
 import { useRef, useState } from 'react';
 import { Modal } from './Modal';
-import { IconCamera, IconTrash } from './icons';
+import { IconCamera, IconMail, IconTrash } from './icons';
 import { useStore } from '../store/useStore';
 import { comprimirImagen, getVisita, saveVisita, resumen, sincronizarVisita, type Visita } from '../lib/visitas';
+import { abrirCorreo, correoIndividual } from '../lib/correo';
 
 // Botón que muestra el estado del registro (fotos/observaciones) de un punto
 // y abre el modal para capturar fotos y escribir observaciones.
-export function RegistroVisita({ idTienda, nombre }: { idTienda: string; nombre: string }) {
+export function RegistroVisita({ idTienda, nombre, zona }: { idTienda: string; nombre: string; zona?: string }) {
   const reg = useStore((s) => s.registros[idTienda]);
   const setRegistro = useStore((s) => s.setRegistro);
   const toast = useStore((s) => s.toast);
@@ -173,6 +174,19 @@ export function RegistroVisita({ idTienda, nombre }: { idTienda: string; nombre:
               className="w-full resize-y rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-sm outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-100 dark:border-slate-700 dark:bg-slate-950 dark:focus:ring-brand-500/20"
             />
           </div>
+
+          {/* Enviar por correo (desde la cuenta del usuario) */}
+          {visita && (visita.fotos.length > 0 || visita.observaciones.trim()) && (
+            <button
+              onClick={() => {
+                const { subject, body } = correoIndividual(idTienda, { nombre, zona }, visita);
+                abrirCorreo(subject, body);
+              }}
+              className="flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800"
+            >
+              <IconMail className="h-4 w-4" /> Enviar por correo
+            </button>
+          )}
 
           <div className="flex items-center justify-between">
             <span className="text-[11px] font-medium">

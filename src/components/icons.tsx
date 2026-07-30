@@ -119,6 +119,13 @@ export const IconRefresh = (p: P) => (
   </svg>
 );
 
+export const IconMail = (p: P) => (
+  <svg {...base} {...p}>
+    <rect x="3" y="5" width="18" height="14" rx="2" />
+    <path d="M3.5 6.5l8.5 6 8.5-6" />
+  </svg>
+);
+
 export const IconCamera = (p: P) => (
   <svg {...base} {...p}>
     <path d="M4 8a2 2 0 0 1 2-2h1.5l1-1.5h5l1 1.5H18a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8z" />

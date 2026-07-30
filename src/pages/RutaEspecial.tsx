@@ -82,7 +82,7 @@ function ItemEspecial({ tienda, orden }: { tienda: Tienda; orden: number }) {
             )}
           </div>
           <div className="mt-2">
-            <RegistroVisita idTienda={tienda.id_tienda} nombre={tienda.nombre} />
+            <RegistroVisita idTienda={tienda.id_tienda} nombre={tienda.nombre} zona={tienda.zona} />
           </div>
         </div>
         <button

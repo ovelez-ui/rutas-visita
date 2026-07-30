@@ -98,7 +98,7 @@ function ParadaItem({
           </div>
         </div>
         <div className="shrink-0">
-          <RegistroVisita idTienda={parada.id_tienda} nombre={tienda?.nombre ?? parada.id_tienda} />
+          <RegistroVisita idTienda={parada.id_tienda} nombre={tienda?.nombre ?? parada.id_tienda} zona={tienda?.zona} />
         </div>
       </div>
 
