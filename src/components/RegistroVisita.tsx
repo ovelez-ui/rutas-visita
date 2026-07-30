@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { Modal } from './Modal';
 import { IconCamera, IconTrash } from './icons';
 import { useStore } from '../store/useStore';
-import { comprimirImagen, getVisita, saveVisita, resumen, type Visita } from '../lib/visitas';
+import { comprimirImagen, getVisita, saveVisita, resumen, sincronizarVisita, type Visita } from '../lib/visitas';
 
 // Botón que muestra el estado del registro (fotos/observaciones) de un punto
 // y abre el modal para capturar fotos y escribir observaciones.
@@ -14,20 +14,44 @@ export function RegistroVisita({ idTienda, nombre }: { idTienda: string; nombre:
   const [open, setOpen] = useState(false);
   const [visita, setVisita] = useState<Visita | null>(null);
   const [cargando, setCargando] = useState(false);
+  const [sinc, setSinc] = useState<'ok' | 'pend' | 'subiendo'>('ok');
   const inputRef = useRef<HTMLInputElement>(null);
 
   const tieneDatos = reg && (reg.fotos > 0 || reg.obs);
 
   const abrir = async () => {
     setOpen(true);
-    setVisita(await getVisita(idTienda));
+    const v = await getVisita(idTienda);
+    setVisita(v);
+    const pendiente = (v.fotos.length > 0 || v.observaciones) && v.actualizado !== v.sincronizado;
+    setSinc(pendiente ? 'pend' : 'ok');
+    if (pendiente) sincronizar(v); // reintenta subir lo que quedó local
   };
 
-  const persistir = async (v: Visita) => {
+  // Guarda solo en el dispositivo (instantáneo, offline)
+  const persistirLocal = async (v: Visita) => {
     v.actualizado = new Date().toISOString();
     setVisita({ ...v });
     await saveVisita(idTienda, v);
     setRegistro(idTienda, resumen(v));
+    setSinc('pend');
+    return v;
+  };
+
+  // Sube a la nube (fotos al bucket + fila en la tabla)
+  const sincronizar = async (v: Visita) => {
+    if (!v.fotos.length && !v.observaciones.trim()) {
+      setSinc('ok');
+      return;
+    }
+    setSinc('subiendo');
+    const { visita: actualizada, ok } = await sincronizarVisita(idTienda, v);
+    if (ok) {
+      setVisita({ ...actualizada });
+      setSinc('ok');
+    } else {
+      setSinc('pend');
+    }
   };
 
   const onFiles = async (files: FileList) => {
@@ -39,7 +63,8 @@ export function RegistroVisita({ idTienda, nombre }: { idTienda: string; nombre:
         const dataUrl = await comprimirImagen(file);
         nuevas.push({ id: `${Date.now()}-${Math.round(Math.random() * 1e6)}`, dataUrl, fecha: new Date().toISOString() });
       }
-      await persistir({ ...visita, fotos: [...visita.fotos, ...nuevas] });
+      const v = await persistirLocal({ ...visita, fotos: [...visita.fotos, ...nuevas] });
+      sincronizar(v); // las fotos se suben de inmediato
     } catch {
       toast('No se pudo procesar alguna foto.', 'error');
     } finally {
@@ -49,12 +74,18 @@ export function RegistroVisita({ idTienda, nombre }: { idTienda: string; nombre:
 
   const borrarFoto = async (id: string) => {
     if (!visita) return;
-    await persistir({ ...visita, fotos: visita.fotos.filter((f) => f.id !== id) });
+    const v = await persistirLocal({ ...visita, fotos: visita.fotos.filter((f) => f.id !== id) });
+    sincronizar(v);
   };
 
   const guardarObs = async (texto: string) => {
     if (!visita) return;
-    await persistir({ ...visita, observaciones: texto });
+    await persistirLocal({ ...visita, observaciones: texto }); // sube al cerrar
+  };
+
+  const cerrar = () => {
+    setOpen(false);
+    if (sinc === 'pend' && visita) sincronizar(visita);
   };
 
   return (
@@ -79,7 +110,7 @@ export function RegistroVisita({ idTienda, nombre }: { idTienda: string; nombre:
         )}
       </button>
 
-      <Modal open={open} onClose={() => setOpen(false)} title="Registro de visita">
+      <Modal open={open} onClose={cerrar} title="Registro de visita">
         <div className="space-y-4">
           <div className="text-sm font-semibold text-slate-800 dark:text-slate-200">{nombre}</div>
 
@@ -144,9 +175,13 @@ export function RegistroVisita({ idTienda, nombre }: { idTienda: string; nombre:
           </div>
 
           <div className="flex items-center justify-between">
-            <span className="text-[11px] text-slate-400">Se guarda automáticamente en este dispositivo.</span>
+            <span className="text-[11px] font-medium">
+              {sinc === 'subiendo' && <span className="text-slate-400">☁️ Subiendo a la nube…</span>}
+              {sinc === 'ok' && <span className="text-emerald-600 dark:text-emerald-400">☁️ Guardado en la nube</span>}
+              {sinc === 'pend' && <span className="text-amber-600 dark:text-amber-400">⏳ Guardado local · se subirá al reconectar</span>}
+            </span>
             <button
-              onClick={() => setOpen(false)}
+              onClick={cerrar}
               className="rounded-xl bg-brand-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-700"
             >
               Listo

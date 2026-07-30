@@ -1,18 +1,22 @@
 import { get, set, del } from 'idb-keyval';
+import { supabase, BUCKET_FOTOS } from './supabase';
 
-// Registro de visita por punto (foto(s) + observaciones), guardado en IndexedDB.
-// Diseño local-first: funciona offline; en la Parte 2 se sincroniza a la nube.
+// Registro de visita por punto (foto(s) + observaciones).
+// Diseño local-first: se guarda en IndexedDB (offline) y se sincroniza a Supabase.
 
 export interface Foto {
   id: string;
-  dataUrl: string; // JPEG comprimido en base64
+  dataUrl: string; // JPEG comprimido en base64 (cache local para ver offline)
   fecha: string; // ISO
+  path?: string; // ruta en el bucket de Supabase (una vez subida)
+  url?: string; // URL pública de la foto en la nube
 }
 
 export interface Visita {
   observaciones: string;
   fotos: Foto[];
   actualizado: string; // ISO
+  sincronizado?: string; // ISO del último push exitoso a la nube
 }
 
 export interface ResumenVisita {
@@ -37,6 +41,58 @@ export async function delVisita(idTienda: string): Promise<void> {
 
 export function resumen(v: Visita): ResumenVisita {
   return { fotos: v.fotos.length, obs: v.observaciones.trim().length > 0 };
+}
+
+// ── Sincronización con la nube (Supabase) ───────────────────────────────────
+
+function dataUrlABlob(dataUrl: string): Blob {
+  const [cab, b64] = dataUrl.split(',');
+  const mime = /:(.*?);/.exec(cab)?.[1] ?? 'image/jpeg';
+  const bin = atob(b64);
+  const bytes = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+  return new Blob([bytes], { type: mime });
+}
+
+// Sube fotos pendientes + guarda la fila en la tabla `visitas`.
+// Devuelve la visita actualizada (con las URLs de la nube) y si quedó sincronizada.
+export async function sincronizarVisita(
+  idTienda: string,
+  visita: Visita,
+): Promise<{ visita: Visita; ok: boolean }> {
+  try {
+    // 1) Subir fotos que aún no tienen URL en la nube
+    const fotos: Foto[] = [];
+    for (const f of visita.fotos) {
+      if (f.url) {
+        fotos.push(f);
+        continue;
+      }
+      const path = `${idTienda}/${f.id}.jpg`;
+      const { error } = await supabase.storage
+        .from(BUCKET_FOTOS)
+        .upload(path, dataUrlABlob(f.dataUrl), { contentType: 'image/jpeg', upsert: true });
+      if (error) throw error;
+      const { data } = supabase.storage.from(BUCKET_FOTOS).getPublicUrl(path);
+      fotos.push({ ...f, path, url: data.publicUrl });
+    }
+
+    // 2) Guardar la fila (metadatos, sin el dataUrl para no inflar la base)
+    const fotosMeta = fotos.map((f) => ({ id: f.id, path: f.path, url: f.url, fecha: f.fecha }));
+    const { error: errRow } = await supabase.from('visitas').upsert({
+      id_tienda: idTienda,
+      observaciones: visita.observaciones,
+      fotos: fotosMeta,
+      actualizado: visita.actualizado,
+    });
+    if (errRow) throw errRow;
+
+    const actualizada: Visita = { ...visita, fotos, sincronizado: new Date().toISOString() };
+    await saveVisita(idTienda, actualizada); // persistir URLs en cache local
+    return { visita: actualizada, ok: true };
+  } catch {
+    return { visita, ok: false }; // sin conexión o tabla no lista: queda pendiente
+  }
 }
 
 // Comprime una imagen de la cámara a JPEG (máx. `max` px de lado) para que

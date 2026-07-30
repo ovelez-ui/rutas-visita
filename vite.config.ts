@@ -12,6 +12,13 @@ export default defineConfig(({ mode }) => {
 
   return {
     base: './', // rutas relativas: funciona en subcarpetas, hosting estático y archivo local
+    resolve: {
+      // Evita instancias duplicadas de React tras añadir dependencias nuevas
+      dedupe: ['react', 'react-dom'],
+    },
+    optimizeDeps: {
+      include: ['react', 'react-dom', 'react/jsx-runtime', '@supabase/supabase-js', 'idb-keyval'],
+    },
     plugins: [
       react(),
       ...(unSoloArchivo
