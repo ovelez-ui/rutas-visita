@@ -20,9 +20,10 @@ import { CSS } from '@dnd-kit/utilities';
 import type { DiaRuta, Tienda } from '../types';
 import { useStore } from '../store/useStore';
 import { ZonaBadge } from './ui';
-import { IconCheck, IconDrag, IconGo, IconMap, IconRefresh } from './icons';
+import { IconCheck, IconDrag, IconGo, IconMap, IconRefresh, IconSpark } from './icons';
 import { urlRutaCompleta } from '../lib/maps';
 import { ordenarPorProximidad, kmDia } from '../lib/rutas';
+import { mensajeDelDia } from '../lib/motivacion';
 
 const MapaDia = lazy(() => import('./MapaDia'));
 
@@ -176,6 +177,19 @@ export function RutaDia({ dia }: { dia: DiaRuta }) {
 
   return (
     <div>
+      {/* Mensaje motivacional para la Coordinadora Dermo */}
+      <div className="mb-4 flex items-start gap-3 rounded-2xl bg-gradient-to-br from-violet-500 to-rose-500 p-4 text-white shadow-sm">
+        <div className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white/20">
+          <IconSpark className="h-5 w-5" />
+        </div>
+        <div>
+          <div className="text-[11px] font-semibold uppercase tracking-wide text-white/80">
+            Para ti, Coordinadora Dermo
+          </div>
+          <p className="mt-0.5 text-sm font-medium leading-snug">{mensajeDelDia(dia.dia)}</p>
+        </div>
+      </div>
+
       {/* Cabecera del día */}
       <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
         <div className="flex flex-wrap items-center gap-1.5">

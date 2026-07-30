@@ -118,3 +118,10 @@ export const IconRefresh = (p: P) => (
     <path d="M3 21v-5h5" />
   </svg>
 );
+
+export const IconSpark = (p: P) => (
+  <svg {...base} {...p}>
+    <path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z" />
+    <path d="M19 15l.7 1.8L21.5 17.5 19.7 18.2 19 20l-.7-1.8L16.5 17.5 18.3 16.8 19 15z" />
+  </svg>
+);
