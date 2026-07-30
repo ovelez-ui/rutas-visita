@@ -1,4 +1,4 @@
-import { get, set, del } from 'idb-keyval';
+import { get, set, del, entries } from 'idb-keyval';
 import { supabase, BUCKET_FOTOS } from './supabase';
 
 // Registro de visita por punto (foto(s) + observaciones).
@@ -92,6 +92,43 @@ export async function sincronizarVisita(
     return { visita: actualizada, ok: true };
   } catch {
     return { visita, ok: false }; // sin conexión o tabla no lista: queda pendiente
+  }
+}
+
+// ── Listado consolidado (para el reporte) ───────────────────────────────────
+
+export interface VisitaFila {
+  id_tienda: string;
+  observaciones: string;
+  fotos: Foto[];
+  actualizado: string;
+}
+
+// Todas las visitas guardadas en la nube.
+export async function listarVisitasNube(): Promise<VisitaFila[]> {
+  const { data, error } = await supabase
+    .from('visitas')
+    .select('*')
+    .order('actualizado', { ascending: false });
+  if (error) throw error;
+  return (data ?? []) as VisitaFila[];
+}
+
+// Todas las visitas guardadas en este dispositivo (respaldo offline).
+export async function listarVisitasLocal(): Promise<VisitaFila[]> {
+  const todo = await entries();
+  return todo
+    .filter(([k]) => String(k).startsWith('visita:'))
+    .map(([k, v]) => ({ id_tienda: String(k).slice('visita:'.length), ...(v as Visita) }))
+    .sort((a, b) => (b.actualizado ?? '').localeCompare(a.actualizado ?? ''));
+}
+
+// Intenta la nube; si falla (sin conexión), usa lo local.
+export async function listarVisitas(): Promise<{ filas: VisitaFila[]; fuente: 'nube' | 'local' }> {
+  try {
+    return { filas: await listarVisitasNube(), fuente: 'nube' };
+  } catch {
+    return { filas: await listarVisitasLocal(), fuente: 'local' };
   }
 }
 

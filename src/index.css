@@ -36,3 +36,22 @@ body {
 * {
   scrollbar-width: thin;
 }
+
+/* Impresión / Guardar como PDF: solo el contenido del reporte */
+@media print {
+  aside,
+  header,
+  nav,
+  .no-print {
+    display: none !important;
+  }
+  main {
+    padding: 0 !important;
+  }
+  body {
+    background: #fff !important;
+  }
+  .print\:block {
+    display: block !important;
+  }
+}

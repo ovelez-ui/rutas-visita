@@ -75,6 +75,23 @@ export default function Dashboard() {
         </div>
       </Card>
 
+      {/* Acceso al reporte */}
+      <Link
+        to="/reporte"
+        className="mt-3 flex items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm shadow-slate-200/50 transition hover:border-brand-300 dark:border-slate-800 dark:bg-slate-900 dark:shadow-none"
+      >
+        <div className="flex items-center gap-3">
+          <div className="grid h-10 w-10 place-items-center rounded-xl bg-emerald-50 text-emerald-600 dark:bg-emerald-500/10 dark:text-emerald-400">
+            <IconPin className="h-5 w-5" />
+          </div>
+          <div>
+            <div className="text-sm font-semibold text-slate-900 dark:text-white">Reporte de visitas</div>
+            <div className="text-xs text-slate-500 dark:text-slate-400">Consolidado con fotos y observaciones</div>
+          </div>
+        </div>
+        <IconGo className="h-5 w-5 text-slate-400" />
+      </Link>
+
       {/* Distribución por zona */}
       <div className="mt-5">
         <h2 className="mb-3 text-sm font-semibold text-slate-500 dark:text-slate-400">
