@@ -1,5 +1,7 @@
+import { useEffect, useState } from 'react';
 import { useStore } from '../store/useStore';
 import { Card, PageTitle } from '../components/ui';
+import { supabase } from '../lib/supabase';
 
 function Stepper({
   label, hint, value, min, max, onChange,
@@ -40,6 +42,11 @@ export default function Config() {
   const opciones = useStore((s) => s.opciones);
   const setOpciones = useStore((s) => s.setOpciones);
   const toast = useStore((s) => s.toast);
+
+  const [correo, setCorreo] = useState<string | null>(null);
+  useEffect(() => {
+    supabase.auth.getUser().then(({ data }) => setCorreo(data.user?.email ?? null));
+  }, []);
 
   const zonas = new Set(tiendas.map((t) => t.zona)).size;
 
@@ -115,8 +122,27 @@ export default function Config() {
           </button>
         </Card>
 
+        {/* Cuenta */}
+        {correo && (
+          <Card className="flex items-center justify-between p-4">
+            <div className="min-w-0">
+              <div className="text-sm font-semibold text-slate-900 dark:text-white">Sesión</div>
+              <div className="truncate text-xs text-slate-500 dark:text-slate-400">{correo}</div>
+            </div>
+            <button
+              onClick={async () => {
+                await supabase.auth.signOut();
+                location.reload();
+              }}
+              className="shrink-0 rounded-lg border border-slate-200 px-3 py-1.5 text-sm font-medium text-rose-600 transition hover:bg-rose-50 dark:border-slate-700 dark:hover:bg-rose-500/10"
+            >
+              Cerrar sesión
+            </button>
+          </Card>
+        )}
+
         <p className="px-1 text-center text-[11px] text-slate-400">
-          Rutas de Visita · v1 · Los datos se guardan solo en este dispositivo.
+          Rutas de Visita · v1 · Datos en la nube (Supabase).
         </p>
       </div>
     </div>
