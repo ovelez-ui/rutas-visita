@@ -5,6 +5,10 @@ import { IconMail, IconRutas } from './icons';
 
 // Muro de acceso: sin sesión muestra el login (magic link); con sesión, la app.
 export function AuthGate({ children }: { children: ReactNode }) {
+  // En desarrollo local (npm run dev) se omite el login para poder probar.
+  // La build de producción SIEMPRE exige inicio de sesión.
+  if (import.meta.env.DEV) return <>{children}</>;
+
   const [session, setSession] = useState<Session | null>(null);
   const [cargando, setCargando] = useState(true);
   const [email, setEmail] = useState('');

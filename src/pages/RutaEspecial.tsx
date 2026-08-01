@@ -140,8 +140,9 @@ function SelectorTiendas({ onCerrar }: { onCerrar: () => void }) {
   const sel = new Set(especial);
 
   return (
-    <div className="space-y-3">
-      <div className="flex flex-col gap-2 sm:flex-row">
+    <div className="flex min-h-0 flex-1 flex-col">
+      {/* Búsqueda + filtro (fijos arriba) */}
+      <div className="flex flex-col gap-2 border-b border-slate-200 p-4 sm:flex-row dark:border-slate-800">
         <input
           value={q}
           onChange={(e) => setQ(e.target.value)}
@@ -160,14 +161,15 @@ function SelectorTiendas({ onCerrar }: { onCerrar: () => void }) {
         </select>
       </div>
 
-      <div className="max-h-[52vh] space-y-1.5 overflow-y-auto pr-1">
+      {/* Lista con scroll (ocupa el resto) */}
+      <div className="min-h-0 flex-1 space-y-1.5 overflow-y-auto p-4">
         {filtradas.map((t) => {
           const activa = sel.has(t.id_tienda);
           return (
             <button
               key={t.id_tienda}
               onClick={() => toggle(t.id_tienda)}
-              className={`flex w-full items-center gap-2.5 rounded-xl border p-2.5 text-left transition ${
+              className={`flex w-full items-center gap-2.5 rounded-xl border p-3 text-left transition ${
                 activa
                   ? 'border-brand-300 bg-brand-50 dark:border-brand-500/40 dark:bg-brand-500/10'
                   : 'border-slate-200 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-800/50'
@@ -187,14 +189,20 @@ function SelectorTiendas({ onCerrar }: { onCerrar: () => void }) {
             </button>
           );
         })}
+        {filtradas.length === 0 && (
+          <p className="py-10 text-center text-sm text-slate-400">Sin resultados para ese filtro.</p>
+        )}
       </div>
 
-      <button
-        onClick={onCerrar}
-        className="w-full rounded-xl bg-brand-600 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-700"
-      >
-        Listo ({especial.length} en el recorrido)
-      </button>
+      {/* Botón Listo (fijo abajo, con safe-area) */}
+      <div className="border-t border-slate-200 p-4 pb-[max(1rem,env(safe-area-inset-bottom))] dark:border-slate-800">
+        <button
+          onClick={onCerrar}
+          className="w-full rounded-xl bg-brand-600 py-3 text-sm font-semibold text-white transition hover:bg-brand-700"
+        >
+          Listo ({especial.length} en el recorrido)
+        </button>
+      </div>
     </div>
   );
 }
@@ -333,7 +341,7 @@ export default function RutaEspecial() {
               >
                 {verMapa ? '▲ Ocultar mapa' : '▼ Ver mapa del recorrido'}
               </button>
-              {verMapa && (
+              {verMapa && !abrirSelector && (
                 <Suspense
                   fallback={
                     <div className="grid h-72 w-full place-items-center rounded-2xl border border-slate-200 bg-slate-50 text-sm text-slate-400 dark:border-slate-800 dark:bg-slate-800/40">
@@ -360,7 +368,7 @@ export default function RutaEspecial() {
         </>
       )}
 
-      <Modal open={abrirSelector} onClose={() => setAbrirSelector(false)} title="Elegir tiendas">
+      <Modal open={abrirSelector} onClose={() => setAbrirSelector(false)} title="Elegir tiendas" fullScreen>
         <SelectorTiendas onCerrar={() => setAbrirSelector(false)} />
       </Modal>
     </div>
