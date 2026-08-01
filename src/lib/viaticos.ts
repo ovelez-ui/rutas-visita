@@ -1,4 +1,8 @@
-import { supabase } from './supabase';
+import { supabase, BUCKET_FOTOS } from './supabase';
+import { comprimirImagen, dataUrlABlob, type Foto } from './visitas';
+
+export type { Foto };
+export { comprimirImagen };
 
 export interface Viatico {
   id: string;
@@ -6,7 +10,27 @@ export interface Viatico {
   concepto: string;
   monto: number;
   categoria: string;
+  fotos?: Foto[]; // facturas
   creado?: string;
+}
+
+// Sube la foto de una factura al bucket (carpeta facturas/) y devuelve sus datos.
+export async function subirFactura(dataUrl: string): Promise<Foto> {
+  const id = `${Date.now()}-${Math.round(Math.random() * 1e6)}`;
+  const path = `facturas/${id}.jpg`;
+  const { error } = await supabase.storage
+    .from(BUCKET_FOTOS)
+    .upload(path, dataUrlABlob(dataUrl), { contentType: 'image/jpeg', upsert: true });
+  if (error) throw error;
+  const { data } = supabase.storage.from(BUCKET_FOTOS).getPublicUrl(path);
+  return { id, dataUrl, path, url: data.publicUrl, fecha: new Date().toISOString() };
+}
+
+// Actualiza las facturas de un viático existente.
+export async function actualizarFotosViatico(id: string, fotos: Foto[]): Promise<void> {
+  const meta = fotos.map((f) => ({ id: f.id, path: f.path, url: f.url, fecha: f.fecha }));
+  const { error } = await supabase.from('viaticos').update({ fotos: meta }).eq('id', id);
+  if (error) throw error;
 }
 
 export const CATEGORIAS = ['Transporte', 'Alimentación', 'Peajes', 'Parqueadero', 'Hospedaje', 'Otros'];
@@ -22,7 +46,12 @@ export async function listarViaticos(): Promise<Viatico[]> {
 }
 
 export async function agregarViatico(v: Omit<Viatico, 'id' | 'creado'>): Promise<Viatico> {
-  const { data, error } = await supabase.from('viaticos').insert(v).select().single();
+  // Guardamos solo metadatos de foto (no el dataUrl) para no inflar la base.
+  const fila = {
+    ...v,
+    fotos: (v.fotos ?? []).map((f) => ({ id: f.id, path: f.path, url: f.url, fecha: f.fecha })),
+  };
+  const { data, error } = await supabase.from('viaticos').insert(fila).select().single();
   if (error) throw error;
   return data as Viatico;
 }

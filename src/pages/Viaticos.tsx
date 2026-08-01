@@ -1,15 +1,19 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Card, PageTitle } from '../components/ui';
-import { IconPlus, IconTrash, IconWallet } from '../components/icons';
+import { IconCamera, IconPlus, IconTrash, IconWallet } from '../components/icons';
 import { useStore } from '../store/useStore';
 import {
   agregarViatico,
   eliminarViatico,
   listarViaticos,
+  subirFactura,
+  actualizarFotosViatico,
+  comprimirImagen,
   formatoCOP,
   hoyISO,
   CATEGORIAS,
   type Viatico,
+  type Foto,
 } from '../lib/viaticos';
 
 export default function Viaticos() {
@@ -22,7 +26,9 @@ export default function Viaticos() {
   const [concepto, setConcepto] = useState('');
   const [monto, setMonto] = useState('');
   const [categoria, setCategoria] = useState(CATEGORIAS[0]);
+  const [facturaData, setFacturaData] = useState<string | null>(null); // dataUrl comprimido
   const [guardando, setGuardando] = useState(false);
+  const facturaRef = useRef<HTMLInputElement>(null);
 
   const cargar = async () => {
     setCargando(true);
@@ -58,15 +64,41 @@ export default function Viaticos() {
     }
     setGuardando(true);
     try {
-      const nuevo = await agregarViatico({ fecha: dia, concepto: concepto.trim(), monto: m, categoria });
+      let fotos: Foto[] = [];
+      if (facturaData) fotos = [await subirFactura(facturaData)];
+      const nuevo = await agregarViatico({ fecha: dia, concepto: concepto.trim(), monto: m, categoria, fotos });
       setItems((prev) => [nuevo, ...prev]);
       setConcepto('');
       setMonto('');
+      setFacturaData(null);
       toast('Gasto agregado.', 'ok');
     } catch {
       toast('No se pudo guardar (¿sin conexión?).', 'error');
     } finally {
       setGuardando(false);
+    }
+  };
+
+  // Selecciona/comprime la foto de la factura para el gasto que se está creando
+  const elegirFactura = async (file: File) => {
+    try {
+      setFacturaData(await comprimirImagen(file));
+    } catch {
+      toast('No se pudo procesar la foto.', 'error');
+    }
+  };
+
+  // Agrega una factura a un gasto ya existente
+  const agregarFacturaExistente = async (v: Viatico, file: File) => {
+    try {
+      const dataUrl = await comprimirImagen(file);
+      const foto = await subirFactura(dataUrl);
+      const fotos = [...(v.fotos ?? []), foto];
+      await actualizarFotosViatico(v.id, fotos);
+      setItems((prev) => prev.map((x) => (x.id === v.id ? { ...x, fotos } : x)));
+      toast('Factura adjuntada.', 'ok');
+    } catch {
+      toast('No se pudo adjuntar la factura.', 'error');
     }
   };
 
@@ -138,6 +170,41 @@ export default function Viaticos() {
               ))}
             </select>
           </div>
+          {/* Factura (opcional) */}
+          <div className="flex items-center gap-2">
+            <input
+              ref={facturaRef}
+              type="file"
+              accept="image/*"
+              capture="environment"
+              className="hidden"
+              onChange={(e) => {
+                if (e.target.files?.[0]) elegirFactura(e.target.files[0]);
+                e.target.value = '';
+              }}
+            />
+            {facturaData ? (
+              <div className="flex items-center gap-2">
+                <img src={facturaData} alt="factura" className="h-11 w-11 rounded-lg border border-slate-200 object-cover dark:border-slate-700" />
+                <button
+                  type="button"
+                  onClick={() => setFacturaData(null)}
+                  className="text-xs font-medium text-rose-600 hover:underline"
+                >
+                  Quitar factura
+                </button>
+              </div>
+            ) : (
+              <button
+                type="button"
+                onClick={() => facturaRef.current?.click()}
+                className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 px-3 py-2 text-xs font-medium text-slate-600 transition hover:bg-slate-50 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
+              >
+                <IconCamera className="h-4 w-4" /> Foto de factura
+              </button>
+            )}
+          </div>
+
           <button
             type="submit"
             disabled={guardando}
@@ -158,8 +225,38 @@ export default function Viaticos() {
       ) : (
         <div className="space-y-2">
           {delDia.map((v) => (
-            <Card key={v.id} className="flex items-center justify-between gap-3 p-3.5">
-              <div className="min-w-0">
+            <Card key={v.id} className="flex items-center gap-3 p-3.5">
+              {/* Factura: miniatura o botón para adjuntar */}
+              {v.fotos && v.fotos.length > 0 ? (
+                <a
+                  href={v.fotos[0].url ?? v.fotos[0].dataUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="h-11 w-11 shrink-0 overflow-hidden rounded-lg border border-slate-200 dark:border-slate-700"
+                  title="Ver factura"
+                >
+                  <img src={v.fotos[0].url ?? v.fotos[0].dataUrl} alt="factura" className="h-full w-full object-cover" />
+                </a>
+              ) : (
+                <label
+                  className="grid h-11 w-11 shrink-0 cursor-pointer place-items-center rounded-lg border border-dashed border-slate-300 text-slate-400 transition hover:border-brand-400 hover:text-brand-500 dark:border-slate-600"
+                  title="Adjuntar factura"
+                >
+                  <IconCamera className="h-5 w-5" />
+                  <input
+                    type="file"
+                    accept="image/*"
+                    capture="environment"
+                    className="hidden"
+                    onChange={(e) => {
+                      if (e.target.files?.[0]) agregarFacturaExistente(v, e.target.files[0]);
+                      e.target.value = '';
+                    }}
+                  />
+                </label>
+              )}
+
+              <div className="min-w-0 flex-1">
                 <div className="truncate text-sm font-semibold text-slate-900 dark:text-white">{v.concepto}</div>
                 <div className="mt-0.5 text-[11px] text-slate-400">{v.categoria}</div>
               </div>

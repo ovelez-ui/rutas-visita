@@ -45,7 +45,7 @@ export function resumen(v: Visita): ResumenVisita {
 
 // ── Sincronización con la nube (Supabase) ───────────────────────────────────
 
-function dataUrlABlob(dataUrl: string): Blob {
+export function dataUrlABlob(dataUrl: string): Blob {
   const [cab, b64] = dataUrl.split(',');
   const mime = /:(.*?);/.exec(cab)?.[1] ?? 'image/jpeg';
   const bin = atob(b64);
