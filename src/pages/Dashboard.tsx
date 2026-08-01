@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useStore } from '../store/useStore';
 import { Card, PageTitle, ZonaBadge } from '../components/ui';
-import { IconGo, IconPin, IconRutas, IconTiendas } from '../components/icons';
+import { IconGo, IconPin, IconRutas, IconSpark, IconTiendas } from '../components/icons';
 
 function Stat({ label, value, hint, Icon, tone }: {
   label: string;
@@ -87,6 +87,23 @@ export default function Dashboard() {
           <div>
             <div className="text-sm font-semibold text-slate-900 dark:text-white">Reporte de visitas</div>
             <div className="text-xs text-slate-500 dark:text-slate-400">Consolidado con fotos y observaciones</div>
+          </div>
+        </div>
+        <IconGo className="h-5 w-5 text-slate-400" />
+      </Link>
+
+      {/* Acceso a la presentación con IA */}
+      <Link
+        to="/presentacion"
+        className="mt-3 flex items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm shadow-slate-200/50 transition hover:border-brand-300 dark:border-slate-800 dark:bg-slate-900 dark:shadow-none"
+      >
+        <div className="flex items-center gap-3">
+          <div className="grid h-10 w-10 place-items-center rounded-xl bg-violet-50 text-violet-600 dark:bg-violet-500/10 dark:text-violet-400">
+            <IconSpark className="h-5 w-5" />
+          </div>
+          <div>
+            <div className="text-sm font-semibold text-slate-900 dark:text-white">Presentación con IA</div>
+            <div className="text-xs text-slate-500 dark:text-slate-400">Pase de diapositivas del día</div>
           </div>
         </div>
         <IconGo className="h-5 w-5 text-slate-400" />
