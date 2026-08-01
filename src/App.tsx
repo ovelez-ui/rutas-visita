@@ -5,6 +5,7 @@ import Tiendas from './pages/Tiendas';
 import Rutas from './pages/Rutas';
 import RutaEspecial from './pages/RutaEspecial';
 import Reporte from './pages/Reporte';
+import Viaticos from './pages/Viaticos';
 import Config from './pages/Config';
 
 // HashRouter: funciona igual en dev, en hosting estático o abriendo el build.
@@ -18,6 +19,7 @@ const router = createHashRouter([
       { path: 'rutas', element: <Rutas /> },
       { path: 'especial', element: <RutaEspecial /> },
       { path: 'reporte', element: <Reporte /> },
+      { path: 'viaticos', element: <Viaticos /> },
       { path: 'config', element: <Config /> },
     ],
   },

@@ -119,6 +119,14 @@ export const IconRefresh = (p: P) => (
   </svg>
 );
 
+export const IconWallet = (p: P) => (
+  <svg {...base} {...p}>
+    <path d="M3 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1H5a2 2 0 0 0-2 2V7z" />
+    <path d="M3 9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z" />
+    <circle cx="16.5" cy="13" r="1.2" />
+  </svg>
+);
+
 export const IconMail = (p: P) => (
   <svg {...base} {...p}>
     <rect x="3" y="5" width="18" height="14" rx="2" />
