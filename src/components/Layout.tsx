@@ -1,17 +1,37 @@
 import { useEffect } from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import { useStore } from '../store/useStore';
-import { IconConfig, IconDashboard, IconMoon, IconRutas, IconSpark, IconSun, IconTiendas, IconWallet } from './icons';
+import {
+  IconConfig,
+  IconDashboard,
+  IconDoc,
+  IconMoon,
+  IconMore,
+  IconRutas,
+  IconSpark,
+  IconSun,
+  IconTiendas,
+  IconWallet,
+} from './icons';
 import { Toaster } from './Toaster';
 
-const NAV = [
+// Secciones principales (barra inferior en móvil)
+const NAV_PRINCIPAL = [
   { to: '/', label: 'Inicio', Icon: IconDashboard, end: true },
-  { to: '/tiendas', label: 'Tiendas', Icon: IconTiendas },
   { to: '/rutas', label: 'Rutas', Icon: IconRutas },
   { to: '/especial', label: 'Especial', Icon: IconSpark },
   { to: '/viaticos', label: 'Viáticos', Icon: IconWallet },
+];
+
+// Secciones secundarias (menú "Más" + sidebar)
+export const NAV_SECUNDARIO = [
+  { to: '/tiendas', label: 'Tiendas', Icon: IconTiendas },
+  { to: '/reporte', label: 'Reporte', Icon: IconDoc },
+  { to: '/presentacion', label: 'Presentación IA', Icon: IconSpark },
   { to: '/config', label: 'Ajustes', Icon: IconConfig },
 ];
+
+const RUTAS_SECUNDARIAS = ['/mas', ...NAV_SECUNDARIO.map((n) => n.to)];
 
 function Marca() {
   return (
@@ -41,8 +61,17 @@ function BotonTema() {
   );
 }
 
+const claseSidebar = ({ isActive }: { isActive: boolean }) =>
+  `flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition ${
+    isActive
+      ? 'bg-brand-50 text-brand-700 dark:bg-brand-500/10 dark:text-brand-300'
+      : 'text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800'
+  }`;
+
 export default function Layout() {
   const tema = useStore((s) => s.tema);
+  const { pathname } = useLocation();
+  const enSecundario = RUTAS_SECUNDARIAS.includes(pathname);
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', tema === 'oscuro');
@@ -50,30 +79,26 @@ export default function Layout() {
 
   return (
     <div className="min-h-[100dvh] md:flex">
-      {/* Sidebar escritorio */}
+      {/* Sidebar escritorio (todas las secciones) */}
       <aside className="sticky top-0 hidden h-[100dvh] w-60 shrink-0 flex-col border-r border-slate-200 bg-white px-3 py-4 md:flex dark:border-slate-800 dark:bg-slate-900">
         <Marca />
         <nav className="mt-6 flex flex-1 flex-col gap-1">
-          {NAV.map(({ to, label, Icon, end }) => (
-            <NavLink
-              key={to}
-              to={to}
-              end={end}
-              className={({ isActive }) =>
-                `flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition ${
-                  isActive
-                    ? 'bg-brand-50 text-brand-700 dark:bg-brand-500/10 dark:text-brand-300'
-                    : 'text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800'
-                }`
-              }
-            >
+          {NAV_PRINCIPAL.map(({ to, label, Icon, end }) => (
+            <NavLink key={to} to={to} end={end} className={claseSidebar}>
+              <Icon className="h-5 w-5" />
+              {label}
+            </NavLink>
+          ))}
+          <div className="my-2 border-t border-slate-100 dark:border-slate-800" />
+          {NAV_SECUNDARIO.map(({ to, label, Icon }) => (
+            <NavLink key={to} to={to} className={claseSidebar}>
               <Icon className="h-5 w-5" />
               {label}
             </NavLink>
           ))}
         </nav>
         <div className="flex items-center justify-between border-t border-slate-100 pt-3 dark:border-slate-800">
-          <span className="px-2 text-[11px] text-slate-400">v1 · MVP</span>
+          <span className="px-2 text-[11px] text-slate-400">v1</span>
           <BotonTema />
         </div>
       </aside>
@@ -92,9 +117,9 @@ export default function Layout() {
         </main>
       </div>
 
-      {/* Navegación inferior móvil */}
-      <nav className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-6 border-t border-slate-200 bg-white/95 pb-[env(safe-area-inset-bottom)] backdrop-blur md:hidden dark:border-slate-800 dark:bg-slate-900/95">
-        {NAV.map(({ to, label, Icon, end }) => (
+      {/* Navegación inferior móvil: 4 principales + Más */}
+      <nav className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-5 border-t border-slate-200 bg-white/95 pb-[env(safe-area-inset-bottom)] backdrop-blur md:hidden dark:border-slate-800 dark:bg-slate-900/95">
+        {NAV_PRINCIPAL.map(({ to, label, Icon, end }) => (
           <NavLink
             key={to}
             to={to}
@@ -109,6 +134,15 @@ export default function Layout() {
             {label}
           </NavLink>
         ))}
+        <NavLink
+          to="/mas"
+          className={`flex flex-col items-center gap-1 py-2.5 text-[11px] font-medium transition ${
+            enSecundario ? 'text-brand-600 dark:text-brand-400' : 'text-slate-500 dark:text-slate-400'
+          }`}
+        >
+          <IconMore className="h-[22px] w-[22px]" />
+          Más
+        </NavLink>
       </nav>
 
       <Toaster />
