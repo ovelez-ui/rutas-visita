@@ -8,7 +8,7 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
 const GEMINI_KEY = Deno.env.get('GEMINI_API_KEY') ?? '';
-const MODEL = 'gemini-2.0-flash'; // modelo gratuito con visión; cambiable si hace falta
+const MODEL = 'gemini-flash-latest'; // modelo con visión y cuota gratis en este proyecto
 const SUPABASE_URL = Deno.env.get('SUPABASE_URL') ?? '';
 const ANON_KEY = Deno.env.get('SUPABASE_ANON_KEY') ?? '';
 
