@@ -19,7 +19,8 @@ export async function generarPresentacion(
   fecha: string,
   tiendas: { id: string; nombre: string; zona: string }[],
 ): Promise<Presentacion> {
-  const { data, error } = await supabase.functions.invoke('presentacion', {
+  // La función quedó desplegada con este nombre (guion final incluido).
+  const { data, error } = await supabase.functions.invoke('presentacion-', {
     body: { fecha, tiendas },
   });
   if (error) throw error;
