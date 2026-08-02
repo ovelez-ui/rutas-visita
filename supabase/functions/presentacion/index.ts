@@ -48,12 +48,16 @@ async function comentarConGemini(nombre: string, zona: string, obs: string, foto
     }
   }
 
+  if (!GEMINI_KEY) return 'IA: falta el secreto GEMINI_API_KEY';
   const resp = await fetch(
     `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${GEMINI_KEY}`,
     { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ contents: [{ parts }] }) },
   );
   const data = await resp.json();
-  return data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || '(sin comentario)';
+  const txt = data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
+  if (txt) return txt;
+  // Diagnóstico: mostrar el error real de Gemini
+  return 'IA: ' + (data?.error?.message || JSON.stringify(data).slice(0, 180));
 }
 
 Deno.serve(async (req) => {
