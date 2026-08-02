@@ -22,6 +22,31 @@ export function ZonaBadge({ zona, size = 'sm' }: { zona: string; size?: 'sm' | '
   );
 }
 
+export function EmptyState({
+  Icon,
+  titulo,
+  mensaje,
+  children,
+}: {
+  Icon: (p: { className?: string }) => ReactNode;
+  titulo: string;
+  mensaje?: string;
+  children?: ReactNode;
+}) {
+  return (
+    <Card className="flex flex-col items-center gap-3 p-10 text-center">
+      <div className="grid h-14 w-14 place-items-center rounded-2xl bg-slate-100 text-slate-400 dark:bg-slate-800 dark:text-slate-500">
+        <Icon className="h-7 w-7" />
+      </div>
+      <div>
+        <div className="text-sm font-semibold text-slate-700 dark:text-slate-200">{titulo}</div>
+        {mensaje && <p className="mx-auto mt-1 max-w-xs text-sm text-slate-500 dark:text-slate-400">{mensaje}</p>}
+      </div>
+      {children}
+    </Card>
+  );
+}
+
 export function PageTitle({ title, subtitle, action }: { title: string; subtitle?: string; action?: ReactNode }) {
   return (
     <div className="mb-6 flex items-end justify-between gap-4">

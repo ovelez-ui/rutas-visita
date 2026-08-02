@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import { useStore } from '../store/useStore';
-import { Card, PageTitle, ZonaBadge } from '../components/ui';
-import { IconPin, IconPlus, IconUpload } from '../components/icons';
+import { Card, EmptyState, PageTitle, ZonaBadge } from '../components/ui';
+import { IconPin, IconPlus, IconTiendas, IconUpload } from '../components/icons';
 import { Modal } from '../components/Modal';
 import { TiendaForm } from '../components/TiendaForm';
 import { ImportDialog } from '../components/ImportDialog';
@@ -121,11 +121,11 @@ export default function Tiendas() {
       </div>
 
       {filtradas.length === 0 ? (
-        <Card className="p-10 text-center">
-          <p className="text-sm text-slate-500 dark:text-slate-400">
-            {tiendas.length === 0 ? 'Aún no hay tiendas. Crea una o importa un archivo.' : 'No se encontraron tiendas con ese filtro.'}
-          </p>
-        </Card>
+        <EmptyState
+          Icon={IconTiendas}
+          titulo={tiendas.length === 0 ? 'Aún no hay tiendas' : 'Sin resultados'}
+          mensaje={tiendas.length === 0 ? 'Crea una tienda o importa un archivo CSV/Excel.' : 'Prueba con otro término o zona.'}
+        />
       ) : (
         <div className="grid gap-2.5 sm:grid-cols-2">
           {filtradas.map((t) => (

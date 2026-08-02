@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useStore } from '../store/useStore';
-import { Card, ZonaBadge } from '../components/ui';
-import { IconMail, IconRefresh } from '../components/icons';
+import { Card, EmptyState, ZonaBadge } from '../components/ui';
+import { IconDoc, IconMail, IconRefresh } from '../components/icons';
 import { listarVisitas, type VisitaFila } from '../lib/visitas';
 import { abrirCorreo, correoReporte } from '../lib/correo';
 
@@ -94,11 +94,11 @@ export default function Reporte() {
       {cargando ? (
         <Card className="p-10 text-center text-sm text-slate-500 dark:text-slate-400">Cargando visitas…</Card>
       ) : filas.length === 0 ? (
-        <Card className="p-10 text-center">
-          <p className="text-sm text-slate-500 dark:text-slate-400">
-            Aún no hay visitas con foto u observación. Registra algunas desde las rutas y vuelve aquí.
-          </p>
-        </Card>
+        <EmptyState
+          Icon={IconDoc}
+          titulo="Sin visitas registradas"
+          mensaje="Aún no hay visitas con foto u observación. Registra algunas desde las rutas y vuelve aquí."
+        />
       ) : (
         <>
           {/* Resumen */}

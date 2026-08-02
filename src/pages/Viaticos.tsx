@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Card, PageTitle } from '../components/ui';
+import { Card, EmptyState, PageTitle } from '../components/ui';
 import { IconCamera, IconPlus, IconTrash, IconWallet } from '../components/icons';
 import { useStore } from '../store/useStore';
 import {
@@ -220,9 +220,7 @@ export default function Viaticos() {
       {cargando ? (
         <Card className="p-8 text-center text-sm text-slate-500 dark:text-slate-400">Cargando…</Card>
       ) : delDia.length === 0 ? (
-        <Card className="p-8 text-center text-sm text-slate-500 dark:text-slate-400">
-          Sin gastos registrados para {fmtDia(dia)}.
-        </Card>
+        <EmptyState Icon={IconWallet} titulo="Sin gastos" mensaje={`Aún no registras gastos para ${fmtDia(dia)}.`} />
       ) : (
         <div className="space-y-2">
           {delDia.map((v) => (
