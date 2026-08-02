@@ -147,6 +147,19 @@ export default function Presentacion() {
       {slides && slides.length > 0 && abierto && (
         <Slideshow slides={slides} fecha={fecha} onCerrar={() => setAbierto(false)} />
       )}
+
+      {/* Estado de carga de la IA */}
+      {generando && (
+        <div className="fixed inset-0 z-[60] flex flex-col items-center justify-center gap-4 bg-slate-950/85 p-6 text-center text-white backdrop-blur-sm">
+          <div className="h-12 w-12 animate-spin rounded-full border-4 border-white/20 border-t-white" />
+          <div>
+            <div className="text-base font-semibold">Generando presentación con IA…</div>
+            <div className="mx-auto mt-1 max-w-xs text-sm text-white/70">
+              La IA está analizando las fotos y redactando cada lámina con base en tus observaciones. Puede tardar unos segundos.
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

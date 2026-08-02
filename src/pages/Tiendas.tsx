@@ -6,6 +6,7 @@ import { Modal } from '../components/Modal';
 import { TiendaForm } from '../components/TiendaForm';
 import { ImportDialog } from '../components/ImportDialog';
 import { exportarCSV } from '../lib/importar';
+import { confirmar } from '../lib/confirm';
 import type { Tienda } from '../types';
 
 export default function Tiendas() {
@@ -53,8 +54,8 @@ export default function Tiendas() {
     setEditando(null);
   };
 
-  const eliminar = (t: Tienda) => {
-    if (confirm(`¿Eliminar "${t.nombre}" (${t.id_tienda})?`)) {
+  const eliminar = async (t: Tienda) => {
+    if (await confirmar({ titulo: 'Eliminar tienda', mensaje: `"${t.nombre}" (${t.id_tienda})`, textoOk: 'Eliminar', peligro: true })) {
       removeTienda(t.id_tienda);
       toast('Tienda eliminada.', 'info');
     }

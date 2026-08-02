@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useStore } from '../store/useStore';
 import { Card, PageTitle } from '../components/ui';
 import { supabase } from '../lib/supabase';
+import { confirmar } from '../lib/confirm';
 
 function Stepper({
   label, hint, value, min, max, onChange,
@@ -110,8 +111,15 @@ export default function Config() {
             {tiendas.length} tiendas · {zonas} zonas · {plan ? `${plan.dias.length} días planificados` : 'sin plan'}
           </div>
           <button
-            onClick={() => {
-              if (confirm('¿Restaurar las tiendas de ejemplo? Se perderán los cambios locales y el plan.')) {
+            onClick={async () => {
+              if (
+                await confirmar({
+                  titulo: 'Restaurar datos de ejemplo',
+                  mensaje: 'Se perderán los cambios locales y el plan generado.',
+                  textoOk: 'Restaurar',
+                  peligro: true,
+                })
+              ) {
                 reset();
                 toast('Datos restaurados a la semilla.', 'info');
               }

@@ -1,6 +1,7 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import { useStore } from '../store/useStore';
+import { ConfirmDialog } from './ConfirmDialog';
 import {
   IconConfig,
   IconDashboard,
@@ -73,6 +74,18 @@ export default function Layout() {
   const { pathname } = useLocation();
   const enSecundario = RUTAS_SECUNDARIAS.includes(pathname);
 
+  const [online, setOnline] = useState(navigator.onLine);
+  useEffect(() => {
+    const on = () => setOnline(true);
+    const off = () => setOnline(false);
+    window.addEventListener('online', on);
+    window.addEventListener('offline', off);
+    return () => {
+      window.removeEventListener('online', on);
+      window.removeEventListener('offline', off);
+    };
+  }, []);
+
   useEffect(() => {
     document.documentElement.classList.toggle('dark', tema === 'oscuro');
   }, [tema]);
@@ -110,6 +123,13 @@ export default function Layout() {
           <BotonTema />
         </header>
 
+        {/* Indicador de conexión */}
+        {!online && (
+          <div className="bg-amber-500 px-4 py-1.5 text-center text-xs font-medium text-white">
+            Sin conexión · los cambios se guardan y se subirán al reconectar
+          </div>
+        )}
+
         <main className="flex-1 px-4 pb-24 pt-5 md:px-8 md:pb-10 md:pt-8">
           <div className="mx-auto w-full max-w-5xl">
             <Outlet />
@@ -146,6 +166,7 @@ export default function Layout() {
       </nav>
 
       <Toaster />
+      <ConfirmDialog />
     </div>
   );
 }

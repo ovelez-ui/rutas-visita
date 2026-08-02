@@ -15,6 +15,7 @@ import {
   type Viatico,
   type Foto,
 } from '../lib/viaticos';
+import { confirmar } from '../lib/confirm';
 
 export default function Viaticos() {
   const toast = useStore((s) => s.toast);
@@ -103,7 +104,7 @@ export default function Viaticos() {
   };
 
   const borrar = async (v: Viatico) => {
-    if (!confirm(`¿Eliminar "${v.concepto}" (${formatoCOP(v.monto)})?`)) return;
+    if (!(await confirmar({ titulo: 'Eliminar gasto', mensaje: `"${v.concepto}" · ${formatoCOP(v.monto)}`, textoOk: 'Eliminar', peligro: true }))) return;
     try {
       await eliminarViatico(v.id);
       setItems((prev) => prev.filter((x) => x.id !== v.id));

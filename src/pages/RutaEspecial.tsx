@@ -22,6 +22,7 @@ import { Card, PageTitle, ZonaBadge } from '../components/ui';
 import { Modal } from '../components/Modal';
 import { IconCheck, IconDrag, IconGo, IconMap, IconPlus, IconRefresh } from '../components/icons';
 import { RegistroVisita } from '../components/RegistroVisita';
+import { confirmar } from '../lib/confirm';
 import { urlRutaCompleta } from '../lib/maps';
 import { ordenarPorProximidad } from '../lib/rutas';
 import { longitudRuta } from '../lib/geo';
@@ -293,8 +294,8 @@ export default function RutaEspecial() {
               <IconRefresh className="h-3.5 w-3.5" /> Optimizar por cercanía
             </button>
             <button
-              onClick={() => {
-                if (confirm('¿Vaciar el recorrido especial?')) {
+              onClick={async () => {
+                if (await confirmar({ titulo: 'Vaciar recorrido', mensaje: 'Se quitarán todos los puntos de la ruta especial.', textoOk: 'Vaciar', peligro: true })) {
                   limpiar();
                   toast('Recorrido vaciado.', 'info');
                 }
