@@ -1,7 +1,7 @@
 import { useEffect, useState, type ReactNode } from 'react';
 import type { Session } from '@supabase/supabase-js';
 import { supabase } from '../lib/supabase';
-import { IconMail, IconRutas } from './icons';
+import { IconMail } from './icons';
 
 // Muro de acceso: sin sesión muestra el login (magic link); con sesión, la app.
 export function AuthGate({ children }: { children: ReactNode }) {
@@ -59,10 +59,8 @@ export function AuthGate({ children }: { children: ReactNode }) {
     <div className="grid min-h-[100dvh] place-items-center bg-slate-50 px-5">
       <div className="w-full max-w-sm">
         <div className="mb-6 flex flex-col items-center text-center">
-          <div className="grid h-14 w-14 place-items-center rounded-2xl bg-brand-600 text-white shadow-sm shadow-brand-600/30">
-            <IconRutas className="h-7 w-7" />
-          </div>
-          <h1 className="mt-3 text-xl font-semibold tracking-tight text-slate-900">Rutas de Visita</h1>
+          <img src="./logo-pasteur.png" alt="Pasteur" className="h-10 w-auto" />
+          <h1 className="mt-4 text-xl font-semibold tracking-tight text-slate-900">Rutas de Visita</h1>
           <p className="mt-1 text-sm text-slate-500">Ingresa con tu correo para continuar</p>
         </div>
 

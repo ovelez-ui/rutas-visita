@@ -31,7 +31,7 @@ export default defineConfig(({ mode }) => {
                 name: 'Rutas de Visita',
                 short_name: 'Rutas',
                 description: 'Planeador de rutas de visita a tiendas',
-                theme_color: '#2563eb',
+                theme_color: '#084878',
                 background_color: '#0f172a',
                 display: 'standalone',
                 orientation: 'portrait',

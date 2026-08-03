@@ -37,9 +37,9 @@ const RUTAS_SECUNDARIAS = ['/mas', ...NAV_SECUNDARIO.map((n) => n.to)];
 function Marca() {
   return (
     <div className="flex items-center gap-2.5 px-2">
-      <div className="grid h-9 w-9 place-items-center rounded-xl bg-brand-600 text-white shadow-sm shadow-brand-600/30">
-        <IconRutas className="h-5 w-5" />
-      </div>
+      <span className="inline-flex items-center rounded-lg bg-white px-2 py-1 shadow-sm ring-1 ring-slate-200/70 dark:ring-slate-700">
+        <img src="./logo-pasteur.png" alt="Pasteur" className="h-4 w-auto" />
+      </span>
       <div className="leading-tight">
         <div className="text-sm font-semibold tracking-tight">Rutas de Visita</div>
         <div className="text-[11px] text-slate-500 dark:text-slate-400">Planeador de campo</div>
