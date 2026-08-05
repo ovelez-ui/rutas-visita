@@ -3,7 +3,7 @@ import type { Session } from '@supabase/supabase-js';
 import { supabase } from '../lib/supabase';
 import { IconMail } from './icons';
 
-// Muro de acceso: sin sesión muestra el login (magic link); con sesión, la app.
+// Muro de acceso: sin sesión muestra el login (código por correo); con sesión, la app.
 export function AuthGate({ children }: { children: ReactNode }) {
   // En desarrollo local (npm run dev) se omite el login para poder probar.
   // La build de producción SIEMPRE exige inicio de sesión.
@@ -11,9 +11,11 @@ export function AuthGate({ children }: { children: ReactNode }) {
 
   const [session, setSession] = useState<Session | null>(null);
   const [cargando, setCargando] = useState(true);
+  const [paso, setPaso] = useState<'correo' | 'codigo'>('correo');
   const [email, setEmail] = useState('');
-  const [estado, setEstado] = useState<'idle' | 'enviando' | 'enviado' | 'error'>('idle');
-  const [msg, setMsg] = useState('');
+  const [codigo, setCodigo] = useState('');
+  const [ocupado, setOcupado] = useState(false);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => {
@@ -26,33 +28,47 @@ export function AuthGate({ children }: { children: ReactNode }) {
 
   if (cargando) {
     return (
-      <div className="grid min-h-[100dvh] place-items-center bg-slate-50 text-sm text-slate-400">
-        Cargando…
-      </div>
+      <div className="grid min-h-[100dvh] place-items-center bg-slate-50 text-sm text-slate-400">Cargando…</div>
     );
   }
-
   if (session) return <>{children}</>;
 
-  const enviar = async (e: React.FormEvent) => {
+  // Paso 1: enviar el código al correo
+  const enviarCodigo = async (e: React.FormEvent) => {
     e.preventDefault();
     const correo = email.trim();
     if (!correo) return;
-    setEstado('enviando');
-    setMsg('');
-    const redirect = window.location.href.split('#')[0];
+    setOcupado(true);
+    setError('');
     const { error } = await supabase.auth.signInWithOtp({
       email: correo,
-      options: { shouldCreateUser: false, emailRedirectTo: redirect },
+      options: { shouldCreateUser: false },
     });
+    setOcupado(false);
     if (error) {
-      setEstado('error');
-      // Con shouldCreateUser:false, un correo no autorizado da error de "signups".
       const noAutorizado = /signup|not allowed|not found|no user/i.test(error.message);
-      setMsg(noAutorizado ? 'Este correo no está autorizado para ingresar.' : error.message);
+      setError(noAutorizado ? 'Este correo no está autorizado para ingresar.' : error.message);
     } else {
-      setEstado('enviado');
+      setPaso('codigo');
     }
+  };
+
+  // Paso 2: verificar el código de 6 dígitos
+  const verificarCodigo = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const token = codigo.replace(/\D/g, '');
+    if (token.length < 6) {
+      setError('Escribe el código de 6 dígitos.');
+      return;
+    }
+    setOcupado(true);
+    setError('');
+    const { error } = await supabase.auth.verifyOtp({ email: email.trim(), token, type: 'email' });
+    setOcupado(false);
+    if (error) {
+      setError('Código incorrecto o vencido. Revisa e intenta de nuevo.');
+    }
+    // si es correcto, onAuthStateChange muestra la app
   };
 
   return (
@@ -61,49 +77,72 @@ export function AuthGate({ children }: { children: ReactNode }) {
         <div className="mb-6 flex flex-col items-center text-center">
           <img src="./logo-pasteur.png" alt="Pasteur" className="h-10 w-auto" />
           <h1 className="mt-4 text-xl font-semibold tracking-tight text-slate-900">Rutas de Visita</h1>
-          <p className="mt-1 text-sm text-slate-500">Ingresa con tu correo para continuar</p>
+          <p className="mt-1 text-sm text-slate-500">
+            {paso === 'correo' ? 'Ingresa con tu correo para continuar' : 'Escribe el código que te llegó'}
+          </p>
         </div>
 
-        {estado === 'enviado' ? (
-          <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5 text-center">
-            <div className="text-2xl">📬</div>
-            <p className="mt-2 text-sm font-medium text-emerald-800">
-              Te enviamos un enlace de acceso a<br />
-              <b>{email.trim()}</b>
-            </p>
-            <p className="mt-2 text-xs text-emerald-700">
-              Ábrelo <b>en este mismo dispositivo</b> para entrar. Revisa también la carpeta de spam.
-            </p>
-            <button
-              onClick={() => setEstado('idle')}
-              className="mt-3 text-xs font-medium text-emerald-700 underline"
-            >
-              Usar otro correo
-            </button>
-          </div>
-        ) : (
-          <form onSubmit={enviar} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+        {paso === 'correo' ? (
+          <form onSubmit={enviarCodigo} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
             <label className="mb-1.5 block text-xs font-semibold text-slate-600">Correo</label>
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="coordinadora@empresa.com"
+              placeholder="tu.correo@pasteur.com.co"
               autoComplete="email"
               required
               className="w-full rounded-xl border border-slate-200 px-3.5 py-2.5 text-sm outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-100"
             />
-            {estado === 'error' && <p className="mt-2 text-xs text-rose-600">{msg}</p>}
+            {error && <p className="mt-2 text-xs text-rose-600">{error}</p>}
             <button
               type="submit"
-              disabled={estado === 'enviando'}
+              disabled={ocupado}
               className="mt-3 flex w-full items-center justify-center gap-2 rounded-xl bg-brand-600 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-700 disabled:opacity-60"
             >
               <IconMail className="h-4 w-4" />
-              {estado === 'enviando' ? 'Enviando…' : 'Enviar enlace de acceso'}
+              {ocupado ? 'Enviando…' : 'Enviar código'}
             </button>
             <p className="mt-3 text-center text-[11px] text-slate-400">
-              Recibirás un enlace para entrar sin contraseña.
+              Te llegará un código de 6 dígitos por correo.
+            </p>
+          </form>
+        ) : (
+          <form onSubmit={verificarCodigo} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <p className="mb-3 text-center text-sm text-slate-600">
+              Enviamos un código a<br />
+              <b>{email.trim()}</b>
+            </p>
+            <label className="mb-1.5 block text-xs font-semibold text-slate-600">Código de 6 dígitos</label>
+            <input
+              type="text"
+              inputMode="numeric"
+              autoComplete="one-time-code"
+              value={codigo}
+              onChange={(e) => setCodigo(e.target.value)}
+              placeholder="123456"
+              maxLength={6}
+              autoFocus
+              className="w-full rounded-xl border border-slate-200 px-3.5 py-2.5 text-center text-lg font-semibold tracking-[0.4em] outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-100"
+            />
+            {error && <p className="mt-2 text-xs text-rose-600">{error}</p>}
+            <button
+              type="submit"
+              disabled={ocupado}
+              className="mt-3 w-full rounded-xl bg-brand-600 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-700 disabled:opacity-60"
+            >
+              {ocupado ? 'Verificando…' : 'Entrar'}
+            </button>
+            <div className="mt-3 flex items-center justify-between text-[11px]">
+              <button type="button" onClick={() => { setPaso('correo'); setCodigo(''); setError(''); }} className="font-medium text-slate-500 underline">
+                Cambiar correo
+              </button>
+              <button type="button" onClick={(ev) => enviarCodigo(ev as unknown as React.FormEvent)} className="font-medium text-brand-600 underline">
+                Reenviar código
+              </button>
+            </div>
+            <p className="mt-3 text-center text-[11px] text-slate-400">
+              Revisa también la carpeta de spam. El código sirve por unos minutos.
             </p>
           </form>
         )}
