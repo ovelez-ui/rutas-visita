@@ -2,11 +2,15 @@ import { useEffect, useState, type ReactNode } from 'react';
 import type { Session } from '@supabase/supabase-js';
 import { supabase } from '../lib/supabase';
 
+// Interruptor de acceso. TEMPORAL: desactivado mientras GitHub Pages/Actions
+// está caído y no podemos publicar el login por contraseña. Para reactivar el
+// ingreso cuando GitHub vuelva, cambia esta constante a `true` y vuelve a desplegar.
+const REQUERIR_LOGIN = false;
+
 // Muro de acceso: sin sesión muestra el login (correo + contraseña); con sesión, la app.
 export function AuthGate({ children }: { children: ReactNode }) {
-  // En desarrollo local (npm run dev) se omite el login para poder probar.
-  // La build de producción SIEMPRE exige inicio de sesión.
-  if (import.meta.env.DEV) return <>{children}</>;
+  // Acceso directo sin login (temporal) o en desarrollo local (npm run dev).
+  if (!REQUERIR_LOGIN || import.meta.env.DEV) return <>{children}</>;
 
   const [session, setSession] = useState<Session | null>(null);
   const [cargando, setCargando] = useState(true);
