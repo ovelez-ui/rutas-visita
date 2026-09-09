@@ -56,15 +56,18 @@ export function RegistroVisita({ idTienda, nombre, zona }: { idTienda: string; n
   };
 
   const onFiles = async (files: FileList) => {
-    if (!visita) return;
     setCargando(true);
     try {
+      // Relee el registro desde el almacenamiento local en vez de depender del
+      // estado en memoria: en iPhone, al abrir la cámara iOS puede descartar la
+      // página de memoria y, al volver, `visita` estaría vacío → la foto se perdía.
+      const base = visita ?? (await getVisita(idTienda));
       const nuevas = [];
       for (const file of Array.from(files)) {
         const dataUrl = await comprimirImagen(file);
         nuevas.push({ id: `${Date.now()}-${Math.round(Math.random() * 1e6)}`, dataUrl, fecha: new Date().toISOString() });
       }
-      const v = await persistirLocal({ ...visita, fotos: [...visita.fotos, ...nuevas] });
+      const v = await persistirLocal({ ...base, fotos: [...base.fotos, ...nuevas] });
       sincronizar(v); // las fotos se suben de inmediato
     } catch {
       toast('No se pudo procesar alguna foto.', 'error');
@@ -133,7 +136,6 @@ export function RegistroVisita({ idTienda, nombre, zona }: { idTienda: string; n
               ref={inputRef}
               type="file"
               accept="image/*"
-              capture="environment"
               multiple
               className="hidden"
               onChange={(e) => {
